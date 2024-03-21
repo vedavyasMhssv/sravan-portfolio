@@ -1,7 +1,7 @@
 import React from "react";
 
 function Hero() {
-  return <div>Hero</div>;
+  return <div className="pt-20">Hero</div>;
 }
 
 export default Hero;

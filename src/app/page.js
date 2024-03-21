@@ -10,7 +10,7 @@ import SocialFeeds from "@/components/SocialFeeds";
 import ContactMe from "@/components/ContactMe";
 export default function Home() {
   return (
-    <>
+    <div style={{ minHeight: "200vh" }}>
       <Hero />
       <Experience />
       <MyStory />
@@ -21,6 +21,6 @@ export default function Home() {
       <RatingsAndClients />
       <SocialFeeds />
       <ContactMe />
-    </>
+    </div>
   );
 }

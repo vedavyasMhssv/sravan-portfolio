@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    --color-theme: #ff7143;
+    --color-bg: #000000;
+    --color-white: #ffffff;
+    --color-text1: #fffefe;
+    --color-text2: #444444;
+    --color-text3: #b3b3b3;
+  }
+}
+
+body {
+  font-family: "Montserrat";
+}

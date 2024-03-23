@@ -14,7 +14,7 @@ function Header() {
     { name: "Social", to: "#" },
   ];
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center relative z-[10000]">
       {/* desktop navbar */}
       <div className="md:flex hidden bg fixed top-3 backdrop-blur-sm bg-white/1 border border-[--color-border1] rounded-[50px] py-2 pe-2 ps-4 w-[98%] mx-auto items-center ">
         <Link href={"#"}>
@@ -35,7 +35,7 @@ function Header() {
           })}
         </div>
 
-        <div
+        <button
           id="letsTalkBtn"
           className="ml-auto border border-[--color-border1] rounded-[50px] px-4 uppercase py-2 flex gap-3 items-center bg-black w-fit"
         >
@@ -48,7 +48,7 @@ function Header() {
               </div>
             </div>
           </div>
-        </div>
+        </button>
       </div>
       {/* mobile view navbar */}
       <div className="md:hidden flex bg fixed top-3 backdrop-blur-sm bg-white/1 border border-[--color-border1] rounded-[50px] py-1 pe-5 ps-4 w-[98%] mx-auto justify-between items-center ">

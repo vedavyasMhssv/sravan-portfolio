@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import MyStory from "@/components/MyStory";
@@ -8,9 +9,18 @@ import OurWorks from "@/components/OurWorks";
 import RatingsAndClients from "@/components/RatingsAndClients";
 import SocialFeeds from "@/components/SocialFeeds";
 import ContactMe from "@/components/ContactMe";
+
+import orangeBlob from "@/images/common/orange-blob.png";
 export default function Home() {
   return (
-    <div style={{ minHeight: "200vh" }}>
+    <div
+      style={{
+        minHeight: "200vh",
+        position: "relative",
+        maxWidth: "100vw",
+        overflow: "hidden",
+      }}
+    >
       <Hero />
       <Experience />
       <MyStory />
@@ -21,6 +31,12 @@ export default function Home() {
       <RatingsAndClients />
       <SocialFeeds />
       <ContactMe />
+      <Image
+        src={orangeBlob}
+        height={500}
+        width={700}
+        className="absolute right-[-450px] top-[400px] min-h-[500px] min-w-[700px]"
+      />
     </div>
   );
 }

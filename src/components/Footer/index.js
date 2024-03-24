@@ -9,11 +9,20 @@ import { TbBrandYoutubeFilled } from "react-icons/tb";
 function Footer() {
   return (
     <div>
-      <div className="m-10 flex items-center justify-center border border-white rounded-lg p-32">
-        <p className="text-5xl font-semibold">
+      <div className="m-10 flex items-center justify-center border border-white rounded-lg p-32 relative ">
+        <p className="text-5xl font-semibold relative z-30">
           Let's start a{" "}
           <span className="font-[Pacifico] text-7xl font-normal">Project</span>
         </p>
+        <div
+          className="absolute text-white rounded-lg z-20 flex justify-center items-end"
+          id="start"
+        >
+          <button className="relative z-30 mb-20 font-semibold">
+            {" "}
+            CONTACT ME
+          </button>
+        </div>
       </div>
       <div className="p-10 flex uppercase justify-between flex-wrap gap-5">
         <div className="flex flex-col gap-3">

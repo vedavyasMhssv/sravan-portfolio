@@ -49,3 +49,23 @@ body {
     transform: rotate(-360deg);
   }
 }
+
+#start {
+  background-image: url("../images/common/bgImage.png");
+  min-width: 100%;
+  min-height: 100%;
+  background-size: 100%;
+}
+
+#start {
+  opacity: 0;
+  transition: 1s;
+}
+#start:hover {
+  opacity: 1;
+  transition: 1s;
+}
+
+#start:hover button {
+  display: block;
+}

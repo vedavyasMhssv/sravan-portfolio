@@ -5,7 +5,12 @@ import arrow from "@/images/common/Arrow.png";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
-
+// social icons
+import { AiFillInstagram } from "react-icons/ai";
+import { FaFacebookSquare } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaSquareTwitter } from "react-icons/fa6";
+import { TbBrandYoutubeFilled } from "react-icons/tb";
 function ContactMe() {
   const submitHandler = (e) => {
     e.preventDefault();
@@ -39,7 +44,7 @@ function ContactMe() {
           onSubmit={submitHandler}
           className="md:flex-[0.7] flex-1 text-black font-bold"
         >
-          <div className="flex gap-5 my-5">
+          <div className="flex gap-5 my-5 flex-wrap">
             <input
               type="text"
               placeholder="FIRST NAME"
@@ -77,7 +82,7 @@ function ContactMe() {
             contact me
           </button>
         </form>
-        <div className="flex-[0.3] bg-black p-8 text-white rounded-bl-[30px] rounded-tr-[30px]  flex-col hidden md:flex">
+        <div className="flex-[0.3] bg-black p-8 text-white rounded-bl-[30px] rounded-tr-[30px]  flex-col hidden md:flex relative">
           <p className="uppercase my-2 font-bold">Contact me :</p>
           <hr></hr>
           <div>
@@ -94,6 +99,13 @@ function ContactMe() {
           <div className=" flex gap-5">
             <FaLocationDot className="text-white mt-[5px]" />
             <p>sample address 21A Hyderabad India</p>
+          </div>
+          <div className="text-xl  flex gap-2 relative max-w-fit ml-auto bottom-[-15px] right-[-20px]">
+            <AiFillInstagram />
+            <FaFacebookSquare />
+            <IoLogoLinkedin />
+            <FaSquareTwitter />
+            <TbBrandYoutubeFilled />
           </div>
         </div>
       </div>

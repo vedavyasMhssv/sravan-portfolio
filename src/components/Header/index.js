@@ -19,7 +19,7 @@ function Header() {
       {" "}
       <div className="w-full flex justify-center relative z-[10000]">
         {/* desktop navbar */}
-        <div className="md:flex hidden bg fixed top-3 backdrop-blur-sm bg-[#00000080] border border-[--color-border1] rounded-[50px] py-2 pe-2 ps-4 w-[98%] mx-auto items-center ">
+        <div className="md:flex hidden bg fixed top-3 backdrop-blur-sm bg-[#00000080] border border-[--color-border1] border-b-0 rounded-[50px] py-2 pe-2 ps-4 w-[98%] mx-auto items-center ">
           <Link href={"#"}>
             <span className="font-[Pacifico] text-[24px] font-normal leading-[40px] tracking-wide">
               Sravan Kumar Angadi
@@ -54,7 +54,7 @@ function Header() {
           </button>
         </div>
         {/* mobile view navbar */}
-        <div className="md:hidden flex bg fixed top-3 backdrop-blur-sm bg-white/1 border border-[--color-border1] rounded-[50px] py-1 pe-5 ps-4 w-[98%] mx-auto justify-between items-center ">
+        <div className="md:hidden flex bg fixed top-3 backdrop-blur-sm bg-[#00000080] border border-[--color-border1] border-b-0 rounded-[50px] py-1 pe-5 ps-4 w-[98%] mx-auto justify-between items-center ">
           <Link href={"#"}>
             <span className="font-[Pacifico] text-[18px] font-normal leading-[40px] tracking-wide">
               Sravan Kumar Angadi
@@ -83,7 +83,7 @@ function Header() {
                 );
               })}
               <Link
-                href={`#`}
+                href={`#contact-us`}
                 className="text-sm font-bold leading-7 tracking-wider uppercase"
                 onClick={() => setOpen(false)}
               >{`Let's talk`}</Link>

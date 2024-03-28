@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import arrow from "@/images/common/Arrow.png";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -19,22 +20,35 @@ function ContactMe() {
   return (
     <div className="bg-white px-5 py-20 sm:px-40 text-black">
       <div className="flex sm:gap-20">
-        <div className="flex-[0.9] text-4xl md:text-6xl font-bold text-black ">
+        <motion.div
+          // reveals content from left to right
+          initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
+          whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className=" text-4xl md:text-6xl font-bold text-black "
+        >
           ALL YOU HAVE TO DO IS SAY{" "}
           <span className="text-[--color-theme]">'HELLO'</span>
-        </div>
-        <div className="text-black flex items-end">
+        </motion.div>
+        <motion.div
+          whileInView={{ rotate: "-135deg" }}
+          transition={{
+            ease: "linear",
+            duration: 0.3,
+            repeat: 0,
+          }}
+          viewport={{ once: true }}
+          className="text-black flex items-end min-h-[60px] min-w-[60px] md:min-h-[120px] md:min-w-[120px]"
+        >
           <Image
             src={arrow}
             height={60}
             width={60}
-            style={{
-              rotate: "-135deg",
-            }}
-            className="h-[60px] w-[60pxs] md:h-[120px] md:w-[120px]"
+            className="h-[60px] w-[60px] md:h-[120px] md:w-[120px]"
             unoptimized
           />
-        </div>
+        </motion.div>
       </div>
       <p className="uppercase font-semibold mt-10">
         fill out the necessary details, i will contact you!

@@ -19,7 +19,7 @@ function Header() {
       {" "}
       <div className="w-full flex justify-center relative z-[10000]">
         {/* desktop navbar */}
-        <div className="md:flex hidden bg fixed top-3 backdrop-blur-sm bg-white/1 border border-[--color-border1] rounded-[50px] py-2 pe-2 ps-4 w-[98%] mx-auto items-center ">
+        <div className="md:flex hidden bg fixed top-3 backdrop-blur-sm bg-[#00000080] border border-[--color-border1] rounded-[50px] py-2 pe-2 ps-4 w-[98%] mx-auto items-center ">
           <Link href={"#"}>
             <span className="font-[Pacifico] text-[24px] font-normal leading-[40px] tracking-wide">
               Sravan Kumar Angadi

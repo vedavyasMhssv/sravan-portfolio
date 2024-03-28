@@ -60,6 +60,7 @@ function OurWorks() {
               duration: 1,
               repeat: 0,
             }}
+            viewport={{ once: true }}
           >
             <div className="bg-[#C4C4C41A] p-2 flex flex-col rounded-md">
               <Image
@@ -85,6 +86,7 @@ function OurWorks() {
               duration: 1,
               repeat: 0,
             }}
+            viewport={{ once: true }}
           >
             <div className="bg-[#C4C4C41A] p-2 flex flex-col rounded-md">
               <Image
@@ -112,6 +114,7 @@ function OurWorks() {
               duration: 1,
               repeat: 0,
             }}
+            viewport={{ once: true }}
           >
             <div className="bg-[#C4C4C41A] p-2 flex flex-col rounded-md">
               <Image
@@ -137,6 +140,7 @@ function OurWorks() {
               duration: 1,
               repeat: 0,
             }}
+            viewport={{ once: true }}
           >
             <div className="bg-[#C4C4C41A] p-2 flex flex-col rounded-md">
               <Image
@@ -164,6 +168,7 @@ function OurWorks() {
               duration: 1,
               repeat: 0,
             }}
+            viewport={{ once: true }}
           >
             <div className="bg-[#C4C4C41A] p-2 flex flex-col rounded-md">
               <Image
@@ -189,6 +194,7 @@ function OurWorks() {
               duration: 1,
               repeat: 0,
             }}
+            viewport={{ once: true }}
           >
             <div className="bg-[#C4C4C41A] p-2 flex flex-col rounded-md">
               <Image

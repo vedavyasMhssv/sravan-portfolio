@@ -18,8 +18,8 @@ function ContactMe() {
     console.log("form submitted");
   };
   return (
-    <div className="bg-white px-5 py-20 sm:px-40 text-black" id="contact-us">
-      <div className="flex sm:gap-5">
+    <div className="bg-white px-5 py-10 sm:px-40 text-black" id="contact-us">
+      <div className="flex sm:gap-5 max-w-[800px] mx-auto">
         <motion.div
           // reveals content from left to right
           initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}

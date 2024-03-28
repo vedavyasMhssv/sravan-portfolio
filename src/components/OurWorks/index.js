@@ -53,11 +53,11 @@ function OurWorks() {
         <div className="flex justify-center text-center flex-wrap px-20">
           <motion.div
             className="flex-1 relative px-5 py-3"
-            initial={{ opacity: 0, left: "-15%" }}
+            initial={{ opacity: 0, left: "-30%" }}
             whileInView={{ opacity: 1, left: "0%" }}
             transition={{
-              ease: [0.67, -0.21, 0.36, 1.24],
-              duration: 2,
+              ease: [0.32, -0.26, 0.39, 1.43],
+              duration: 1,
               repeat: 0,
             }}
           >
@@ -78,11 +78,11 @@ function OurWorks() {
           </motion.div>
           <motion.div
             className="flex-1 relative px-5 py-3 "
-            initial={{ opacity: 0, right: "-15%" }}
+            initial={{ opacity: 0, right: "-30%" }}
             whileInView={{ opacity: 1, right: "0%" }}
             transition={{
-              ease: [0.67, -0.21, 0.36, 1.24],
-              duration: 2,
+              ease: [0.32, -0.26, 0.39, 1.43],
+              duration: 1,
               repeat: 0,
             }}
           >
@@ -105,11 +105,11 @@ function OurWorks() {
         <div className="flex justify-center text-center flex-wrap px-20">
           <motion.div
             className="flex-1 relative px-5 py-3"
-            initial={{ opacity: 0, left: "-15%" }}
+            initial={{ opacity: 0, left: "-30%" }}
             whileInView={{ opacity: 1, left: "0%" }}
             transition={{
-              ease: [0.67, -0.21, 0.36, 1.24],
-              duration: 2,
+              ease: [0.32, -0.26, 0.39, 1.43],
+              duration: 1,
               repeat: 0,
             }}
           >
@@ -130,11 +130,11 @@ function OurWorks() {
           </motion.div>
           <motion.div
             className="flex-1 relative px-5 py-3 "
-            initial={{ opacity: 0, right: "-15%" }}
+            initial={{ opacity: 0, right: "-30%" }}
             whileInView={{ opacity: 1, right: "0%" }}
             transition={{
-              ease: [0.67, -0.21, 0.36, 1.24],
-              duration: 2,
+              ease: [0.32, -0.26, 0.39, 1.43],
+              duration: 1,
               repeat: 0,
             }}
           >
@@ -157,11 +157,11 @@ function OurWorks() {
         <div className="flex justify-center text-center flex-wrap px-20">
           <motion.div
             className="flex-1 relative px-5 py-3"
-            initial={{ opacity: 0, left: "-15%" }}
+            initial={{ opacity: 0, left: "-30%" }}
             whileInView={{ opacity: 1, left: "0%" }}
             transition={{
-              ease: [0.67, -0.21, 0.36, 1.24],
-              duration: 2,
+              ease: [0.32, -0.26, 0.39, 1.43],
+              duration: 1,
               repeat: 0,
             }}
           >
@@ -182,11 +182,11 @@ function OurWorks() {
           </motion.div>
           <motion.div
             className="flex-1 relative px-5 py-3 "
-            initial={{ opacity: 0, right: "-15%" }}
+            initial={{ opacity: 0, right: "-30%" }}
             whileInView={{ opacity: 1, right: "0%" }}
             transition={{
-              ease: [0.67, -0.21, 0.36, 1.24],
-              duration: 2,
+              ease: [0.32, -0.26, 0.39, 1.43],
+              duration: 1,
               repeat: 0,
             }}
           >

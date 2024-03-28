@@ -21,24 +21,26 @@ function MyStory() {
           <p className="text-[--color-theme]">MY</p>
           STORY.
         </motion.div>
-        <motion.div
-          whileInView={{ rotate: "-135deg" }}
-          transition={{
-            ease: "linear",
-            duration: 0.3,
-            repeat: 0,
-          }}
-          viewport={{ once: true }}
-          className="text-white flex items-end min-h-[60px] min-w-[60px] md:min-h-[140px] md:min-w-[140px]"
-        >
-          <Image
-            src={arrow}
-            height={60}
-            width={60}
-            className="h-[60px] w-[60px] md:h-[120px] md:w-[120px]"
-            unoptimized
-          />
-        </motion.div>
+        <div className="relative min-h-[60px] min-w-[60px] md:min-h-[140px] md:min-w-[140px] ms-5 flex items-end">
+          <motion.div
+            whileInView={{ rotate: "-135deg" }}
+            transition={{
+              ease: "linear",
+              duration: 0.3,
+              repeat: 0,
+            }}
+            viewport={{ once: true }}
+            className="text-white flex items-end min-h-[60px] min-w-[60px] md:min-h-[140px] md:min-w-[140px]"
+          >
+            <Image
+              src={arrow}
+              height={60}
+              width={60}
+              className="h-[60px] w-[60px] md:h-[120px] md:w-[120px]"
+              unoptimized
+            />
+          </motion.div>
+        </div>
       </div>
       <div className="mt-10 md:max-w-[800px] mx-auto text-center">
         <p className="mx-auto text-4xl font-bold leading-14 tracking-tighter">

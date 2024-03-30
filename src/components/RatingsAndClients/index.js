@@ -22,6 +22,10 @@ import wink from "@/images/our-clients/wink.png";
 function RatingsAndClients() {
   return (
     <div className="bg-white text-black py-10">
+      <div className="mt-5 mb-20  p-10 flex flex-wrap">
+        <div className="flex flex-col"></div>
+        <div className="flex flex-col"></div>
+      </div>
       <div className="">
         <p className="m-w-fit text-xl font-bold leading-tight tracking-tighter uppercase text-center mb-10">
           companies who trust us

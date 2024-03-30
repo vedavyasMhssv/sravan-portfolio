@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.item {
+  flex: 1;
+  height: 100px; /* Example height */
+  padding: 10px;
+  transition: all 0.6s ease;
+}
+
+.item:hover {
+  flex: 7;
+}
+
+.item:not(:hover) {
+  flex: 1;
+}

@@ -153,9 +153,10 @@ function SocialFeeds() {
       <div className="max-w-[900px] mx-auto mt-10 px-10">
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 500: 2, 800: 3 }}>
           <Masonry gutter="10px">
-            {socialFeeds.map((feed) => {
+            {socialFeeds.map((feed, index) => {
               return (
                 <div
+                  key={index}
                   className="px-2 py-4 border border-black max-h-fit rounded-lg flex flex-col text-black"
                   style={{
                     minHeight: "fit-content",

@@ -92,6 +92,7 @@ function MyStory() {
           </p>
         </div>
       </div>
+      one slider to be done
     </div>
   );
 }

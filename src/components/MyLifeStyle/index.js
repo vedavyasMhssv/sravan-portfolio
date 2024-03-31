@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 function MyLifestyle() {
   return (
     <div>
-      MyLifestyle
+      MyLifestyle in progress currently
       <div
         style={{
           minHeight: "120px",
@@ -15,16 +15,24 @@ function MyLifestyle() {
         className={styles.container}
       >
         <div className={styles.item}>
-          <div style={{ backgroundColor: "blue", minHeight: "100px" }}></div>
+          <div
+            style={{ backgroundColor: "lightgray", minHeight: "100px" }}
+          ></div>
         </div>
         <div className={styles.item}>
-          <div style={{ backgroundColor: "cyan", minHeight: "100px" }}></div>
+          <div
+            style={{ backgroundColor: "lightgray", minHeight: "100px" }}
+          ></div>
         </div>
         <div className={styles.item}>
-          <div style={{ backgroundColor: "yellow", minHeight: "100px" }}></div>
+          <div
+            style={{ backgroundColor: "lightgray", minHeight: "100px" }}
+          ></div>
         </div>
         <div className={styles.item}>
-          <div style={{ backgroundColor: "green", minHeight: "100px" }}></div>
+          <div
+            style={{ backgroundColor: "lightgray", minHeight: "100px" }}
+          ></div>
         </div>
       </div>
     </div>

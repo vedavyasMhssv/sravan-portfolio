@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import alpha from "@/images/our-clients/alpha.png";
 import amazon from "@/images/our-clients/amazon.png";
@@ -56,26 +58,57 @@ function RatingsAndClients() {
   return (
     <div className="bg-white text-black py-10">
       <div className="mt-5 mb-20  p-10 flex flex-wrap  md:max-w-[80%] mx-auto">
-        <div className="flex flex-col flex-1 px-10">
-          <p className="text-3xl font-bold leading-9 tracking-wide  text-black">
+        <div className="flex flex-col flex-1 px-10 relative">
+          <motion.div
+            className="text-3xl font-bold leading-9 tracking-wide  text-black relative"
+            initial={{ opacity: 0, left: "-30%" }}
+            whileInView={{ opacity: 1, left: "0%" }}
+            transition={{
+              ease: [0.32, -0.26, 0.39, 1.43],
+              duration: 1,
+              repeat: 0,
+            }}
+            viewport={{ once: true }}
+          >
             your satisfaction is my first priority. Delightful Testimonials from
             Our Satisfied Clients!
-          </p>
-          <Image
-            src={rating}
-            alt="alpha"
-            height={400}
-            width={400}
-            unoptimized
-            className="mt-5"
-          />
+          </motion.div>
+          <motion.div
+            className="flex-1 relative px-5 py-3 "
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              ease: [0.32, -0.26, 0.39, 1.43],
+              duration: 1,
+              repeat: 0,
+              delay: 0.5,
+            }}
+            viewport={{ once: true }}
+          >
+            <Image
+              src={rating}
+              alt="alpha"
+              height={400}
+              width={400}
+              unoptimized
+              className="mt-5"
+            />
+          </motion.div>
         </div>
-        <div className="flex flex-col flex-1 min-h-[50px] px-16  justify-between">
+        <div className="flex flex-col flex-1 min-h-[50px] px-16  justify-between relative">
           {ratings &&
             ratings.map((rating, index) => {
               return (
-                <div
-                  className="flex flex-col border-b border-b-black"
+                <motion.div
+                  className="flex flex-col border-b border-b-black relative"
+                  initial={{ opacity: 0, right: "-30%" }}
+                  whileInView={{ opacity: 1, right: "0%" }}
+                  transition={{
+                    ease: [0.32, -0.26, 0.39, 1.43],
+                    duration: 1 * index + 1,
+                    repeat: 0,
+                  }}
+                  viewport={{ once: true }}
                   key={index}
                 >
                   <p className="text-sm font-semibold leading-tight text-justify">
@@ -103,7 +136,7 @@ function RatingsAndClients() {
                       }}
                     />
                   </div>
-                </div>
+                </motion.div>
               );
             })}
         </div>

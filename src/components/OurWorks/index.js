@@ -12,7 +12,9 @@ import image7 from "@/images/ourworks/image7.png";
 
 function OurWorks() {
   return (
-    <div style={{ maxWidth: "85%", marginInline: "auto" }}>
+    <div
+      style={{ maxWidth: "85%", marginInline: "auto", paddingBlock: "80px" }}
+    >
       {" "}
       <div className="flex flex-col justify-center text-right">
         <div className="flex justify-center text-right mb-10">

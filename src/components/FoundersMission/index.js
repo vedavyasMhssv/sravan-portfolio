@@ -13,11 +13,11 @@ function FoundersMission() {
       content:
         "We offer website design and development services that are tailored to our client’s needs. Whether you’re looking for a simple, informative website or a complex e-commerce platform, we can help you create a website that meets your goals and exceeds your expectations along with digital marketing services.",
     },
-    {
-      title: "IBETS",
-      content:
-        "The International Business Expedition Trailblazers. Starting a business requires planning and hard work, including meeting legal requirements like registering with the government and getting licenses. We understand this can be overwhelming, so we're here to help. Our mission is to make the process easy and stress-free by handling all necessary documentation accurately and efficiently for our clients.",
-    },
+    // {
+    //   title: "IBETS",
+    //   content:
+    //     "The International Business Expedition Trailblazers. Starting a business requires planning and hard work, including meeting legal requirements like registering with the government and getting licenses. We understand this can be overwhelming, so we're here to help. Our mission is to make the process easy and stress-free by handling all necessary documentation accurately and efficiently for our clients.",
+    // },
     {
       title: "QR ANGADI",
       content:

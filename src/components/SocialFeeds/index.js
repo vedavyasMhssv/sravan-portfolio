@@ -94,7 +94,7 @@ function SocialFeeds() {
   const media = [
     { name: "AWT", id: 1 },
     { name: "QR ANGADI", id: 2 },
-    { name: "IBETS", id: 3 },
+    // { name: "IBETS", id: 3 },
   ];
   return (
     <div className="bg-white py-10">

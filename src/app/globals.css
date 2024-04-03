@@ -129,3 +129,42 @@ body {
 .accordion-item.active .accordion-content {
   max-height: 100%; /* Set to a sufficiently large value */
 }
+
+/* carousel */
+.carousel-container {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+}
+
+.carousel {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 100%; /* Adjust as needed */
+  transition: transform 0.5s ease; /* Smooth transition when changing items */
+}
+
+.carousel-item.active {
+  transform: translateX(0%);
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent; /* Adjust as needed */
+  border: none; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}

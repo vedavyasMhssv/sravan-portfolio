@@ -100,7 +100,11 @@ function OurServices() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="absolute md:top-8 md:right-32 -bottom-8 left-12">
+          <div className="absolute md:top-8 md:right-32 hidden md:block">
+            <CarouselPrevious className="bg-[rgb(0,0,0,0.6)] text-sm" />
+            <CarouselNext className="bg-[rgb(0,0,0,0.6)] text-sm"/>
+          </div>
+          <div className="absolute md:hidden -bottom-8 left-12">
             <CarouselPrevious className="bg-[rgb(0,0,0,0.6)] text-sm" />
             <CarouselNext className="bg-[rgb(0,0,0,0.6)] text-sm"/>
           </div>

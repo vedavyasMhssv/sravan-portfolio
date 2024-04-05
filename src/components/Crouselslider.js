@@ -43,7 +43,7 @@ export function Crouselslider() {
   ];
 
   return (
-    <div className="w-full h-auto py-24 gap-8 flex md:flex-row flex-col justify-between items-center px-2">
+    <div className="w-full h-auto py-32 gap-8 flex md:flex-row flex-col justify-between items-center px-2">
       <div className="flex flex-col justify-start items-start gap-2 md:pl-20 pl-12 ">
         <p className="uppercase text-xs text-gray-400">
           Journey throughout the years of my life.
@@ -66,7 +66,7 @@ export function Crouselslider() {
                       onMouseLeave={() => setHoveredIndex(null)}
                     >
                       <Image
-                        className="h-96 object-fill hover:brightness-75 transition-all duration-500"
+                        className="h-[28rem] object-fill hover:brightness-75 transition-all duration-500"
                         src={value.image}
                       />
                       <motion.div
@@ -111,7 +111,7 @@ export function Crouselslider() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="absolute md:-left-[23rem] md:bottom-14 -bottom-8 left-16 bg-red-600">
+          <div className="absolute md:-left-[23rem] md:bottom-20 -bottom-8 left-16 bg-red-600">
             <CarouselPrevious className="bg-[rgb(0,0,0,0.6)]" />
             <CarouselNext className="bg-[rgb(0,0,0,0.6)]" />
           </div>

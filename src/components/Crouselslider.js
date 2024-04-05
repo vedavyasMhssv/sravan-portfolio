@@ -9,10 +9,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import image1 from "../images/Crouselimage/2009.png";
-import image2 from "../images/Crouselimage/2010.png";
-import image3 from "../images/Crouselimage/2018.png";
-import image4 from "../images/Crouselimage/2019.png";
+import image1 from "../images/Crouselimage/1.png";
+import image2 from "../images/Crouselimage/2.png";
+import image3 from "../images/Crouselimage/3.png";
+import image4 from "../images/Crouselimage/4.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 

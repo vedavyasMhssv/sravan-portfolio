@@ -3,7 +3,7 @@ import React from "react";
 const Text = ({ text, classes }) => {
   return (
     <p
-      className={`p-2 ${classes} uppercase absolute text-[12px] backdrop-blur-sm bg-[#ff71431a] rounded-[20px] `}
+      className={`px-[10px] py-[5px] ${classes} uppercase absolute text-[10px] backdrop-blur-sm bg-[#ff71431a] rounded-[20px] `}
     >
       {text}
     </p>
@@ -11,7 +11,7 @@ const Text = ({ text, classes }) => {
 };
 function Experience() {
   return (
-    <div className="flex w-full my-32 scale-[1.2]">
+    <div className="flex w-full my-32 experience">
       <div
         style={{
           minHeight: "300px",
@@ -25,9 +25,11 @@ function Experience() {
           position: "relative",
         }}
       >
-        <p className="absolute text-[30px] min-w-[450px] flex justify-center items-center font-semibold">
-          10 YEARS OF{" "}
-          <span className="text-[--color-theme]">&nbsp;EXPERIENCE.</span>
+        <p className="absolute text-[22px] min-w-[500px] flex justify-center items-center font-semibold">
+          10 + Years of
+          <span className="text-[--color-theme]">
+            &nbsp;Entrepreneurial Experience.
+          </span>
         </p>
         <div
           id="orbitOne"
@@ -52,11 +54,10 @@ function Experience() {
               maxHeight: "22px",
               maxWidth: "22px",
               borderRadius: "50%",
-              top: "-15px",
+              top: "-12px",
             }}
           ></div>
         </div>
-
         <div
           style={{
             position: "absolute",
@@ -94,28 +95,34 @@ function Experience() {
                 maxHeight: "22px",
                 maxWidth: "22px",
                 borderRadius: "50%",
-                right: "-10px",
+                right: "-5px",
                 top: "60%",
               }}
             ></div>
           </div>
         </div>
-
-        <Text text={"graphic design"} classes={"top-[0px] left-[-20px]"} />
-        <Text text={"advertising"} classes={"top-[0px] right-[0px]"} />
-        <Text text={"digital marketing"} classes={"top-[80px] left-[-110px]"} />
-        <Text text={"app design"} classes={"top-[70px] left-[50px]"} />
-        <Text text={"web design"} classes={"top-[80px] right-[-50px]"} />
-        <Text text={"development"} classes={"bottom-[80px] left-[-70px]"} />
         <Text
-          text={"email marketing"}
+          text={"Business Digitalization"}
+          classes={"top-[0px] left-[-20px]"}
+        />
+        <Text text={"Brand Mastery"} classes={"top-[20px] right-[-30px]"} />
+        <Text text={"Tech Consulting"} classes={"top-[80px] left-[-110px]"} />
+        <Text text={"Product Branding"} classes={"top-[70px] left-[50px]"} />
+        <Text text={"Value Creation"} classes={"top-[80px] right-[-50px]"} />
+        <Text text={"Team Building"} classes={"bottom-[80px] left-[-70px]"} />
+        <Text
+          text={"Product Design"}
           classes={"bottom-[80px] right-[-100px]"}
         />
+        <Text text={"Growth Strategy"} classes={"bottom-[40px] right-[0px]"} />
         <Text
-          text={"software development"}
-          classes={"bottom-[40px] right-[0px]"}
+          text={"Cross-Collaboration"}
+          classes={"bottom-[20px] left-[-40px]"}
         />
-        <Text text={"qr technology"} classes={"bottom-[0px] left-[0px]"} />
+        <Text
+          text={"Innovation Drive"}
+          classes={"bottom-[-20px] left-[150px]"}
+        />
       </div>
     </div>
   );

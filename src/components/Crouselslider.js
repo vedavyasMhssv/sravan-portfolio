@@ -22,23 +22,51 @@ export function Crouselslider() {
   const Data = [
     {
       image: image1,
-      Year: "2009",
-      Desc: "I attended ABC School and excelled as a student. Throughout my academic journey, I devoted myself to learning and consistently strived for excellence. My dedication and hard work were evident in my achievements, earning me recognition as a fantastic student.",
+      Year: "1991",
+      title: "Dawn of the Innovator",
+      Desc: "In the verdant landscapes of Andhra Pradesh, a future pioneer takes his first breath, destined to leave a mark on the world.",
     },
     {
       image: image2,
+      Year: "2008",
+      title: "Foundations of Ambition",
+      Desc: "Emerging victorious from SSLC, Sravan sets his gaze upon the stars, his dreams fueled by the boundless sky.",
+    },
+    {
+      image: image3,
       Year: "2010",
-      Desc: "I pursued aeronautical engineering with fervor. Through rigorous coursework and hands-on projects, I delved into aircraft design, propulsion systems, and aerodynamics. My dedication paid off, earning me recognition as a promising engineer. My journey fills me with pride for the future of aviation.",
+      title: "The Quest for Engineering Elegance",
+      Desc: "With a leap into the world of Aeronautical Engineering, Sravan begins to mold his future, his passion for innovation taking flight.",
+    },
+    {
+      image: image4,
+      Year: "2014",
+      title: "The Entrepreneurial Spark Ignites",
+      Desc: "Graduation marks not just academic achievement but the birth of an entrepreneur. A to Z Services Private Limited becomes the first step in a journey that promises to reshape industries.",
+    },
+    {
+      image: image1,
+      Year: "2015-2016",
+      title: "Diverse Paths, Singular Vision",
+      Desc: "Exploring the realms of logistics and event management, Sravan garners insights that lay the groundwork for Local Live - a beacon of hope for talents hidden in villages, marrying technology with philanthropy.",
+    },
+    {
+      image: image2,
+      Year: "2017",
+      title: "Navigating Business Horizons",
+      Desc: "At Iconwave Technologies, Sravan hones his acumen as a Business Development Manager, his eyes set on transforming potential into reality.",
     },
     {
       image: image3,
       Year: "2018",
-      Desc: "As a Business Development Manager, I excelled in navigating complex markets with strategic agility. Leveraging expertise in sales and marketing, I drove growth through proactive initiatives and targeted networking. I fostered strong partnerships and exceeded targets, contributing success.",
+      title: "Angadi World Technologies - A Dream Realized",
+      Desc: "The founding of Angadi World Technologies marks a pivotal moment. Here, innovation finds its home, birthing groundbreaking products like Jobstreamers and Planet Zoom.",
     },
     {
       image: image4,
-      Year: "2019",
-      Desc: "As CEO of Angadi World Technology, I drive innovation and excellence in digital marketing. Leading a talented team, we stay ahead in the industry, delivering cutting-edge solutions to clients. Through strategic partnerships and client-centric approaches.",
+      Year: "2024",
+      title: "The Diverse Empire Expands",
+      Desc: "The launch of QR Angadi, Interior Angadi, Organic Angadi, and IBETS showcases a remarkable versatility, each venture a chapter in Sravan's ongoing saga of success.",
     },
   ];
 
@@ -57,7 +85,10 @@ export function Crouselslider() {
         <Carousel className="w-full  ">
           <CarouselContent className="ml-1">
             {Data.map((value, index) => (
-              <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/3">
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/3"
+              >
                 <div className="">
                   <Card className="w-auto h-auto rounded-none">
                     <CardContent
@@ -81,6 +112,17 @@ export function Crouselslider() {
                         <h6 className="text-white text-2xl font-bold leading-7">
                           {value.Year}
                         </h6>
+                        <motion.p
+                          className="text-lg font-semibold md:w-52 w-36 text-[--color-theme]"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{
+                            opacity: hoveredIndex === index ? 1 : 0,
+                            y: hoveredIndex === index ? 0 : 20,
+                          }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                        >
+                          {value.title}
+                        </motion.p>
                         <motion.p
                           className="text-white text-xs md:w-52 w-36"
                           initial={{ opacity: 0, y: 20 }}

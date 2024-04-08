@@ -13,6 +13,11 @@ import fb from "@/images/common/fb.png";
 
 import dummyImageOne from "@/images/common/dummyImageOne.png";
 import dummyImageTwo from "@/images/common/dummyImageTwo.png";
+import { FacebookEmbed } from "react-social-media-embed";
+import { InstagramEmbed } from "react-social-media-embed";
+import { LinkedInEmbed } from "react-social-media-embed";
+import { XEmbed } from "react-social-media-embed";
+import { YouTubeEmbed } from "react-social-media-embed";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 function SocialFeeds() {
@@ -25,7 +30,12 @@ function SocialFeeds() {
       fromMedia: "fb",
       socialImg: fb,
       text: "This is a sample text!",
-      cover: dummyImageOne,
+      cover: (
+        <FacebookEmbed
+          url="https://www.facebook.com/andrewismusic/posts/451971596293956"
+          width={550}
+        />
+      ),
     },
     {
       image: user,
@@ -163,7 +173,7 @@ function SocialFeeds() {
                     boxShadow: "5px 6px 0px 0px #000000B0",
                   }}
                 >
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <Image
                       src={feed.image}
                       height={50}
@@ -182,15 +192,20 @@ function SocialFeeds() {
                       width={30}
                       className="ms-auto"
                     />
-                  </div>
-                  {feed.text && <p className="text-[14px]">{feed.text}</p>}
-                  <Image
+                  </div> */}
+                  {/* {feed.text && <p className="text-[14px]">{feed.text}</p>} */}
+                  <LinkedInEmbed
+                    url="https://www.linkedin.com/embed/feed/update/urn:li:share:7103454613785198593"
+                    width={250}
+                    height={350}
+                  />
+                  {/* <Image
                     src={feed.cover}
                     height={50}
                     width={50}
                     className="w-[100%] h-auto mt-2"
                     unoptimized
-                  />
+                  /> */}
                 </div>
               );
             })}

@@ -13,6 +13,8 @@ import ContactMe from "@/components/ContactMe";
 import orangeBlob from "@/images/common/orange-blob.png";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Crouselslider from "@/components/Crouselslider";
+import Navigatebutton from "@/components/Navigatebutton";
 export default function Home() {
   return (
     <>
@@ -25,6 +27,7 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
+        <Navigatebutton/>
         <Hero />
         <Experience />
         <MyStory />
@@ -42,7 +45,7 @@ export default function Home() {
           className="absolute right-[-450px] top-[400px] min-h-[500px] min-w-[700px]"
         />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

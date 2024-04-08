@@ -29,9 +29,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div id="header-menu-root"></div>
-        {/* <Header /> */}
+        <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import arrow from "@/images/common/ArrowWhite.png";
 import sravan from "@/images/common/sravan.jpg";
 
 import Image from "next/image";
+import Crouselslider from "../Crouselslider";
 function MyStory() {
   return (
     <div className="flex flex-col">
@@ -92,7 +93,9 @@ function MyStory() {
           </p>
         </div>
       </div>
-      one slider to be done
+       <div>
+        <Crouselslider/>
+       </div>
     </div>
   );
 }

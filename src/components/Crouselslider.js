@@ -59,7 +59,7 @@ export function Crouselslider() {
             {Data.map((value, index) => (
               <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/3">
                 <div className="">
-                  <Card className="w-auto h-auto rounded-none bg-red-400">
+                  <Card className="w-auto h-auto rounded-none">
                     <CardContent
                       className="flex p-0"
                       onMouseOver={() => setHoveredIndex(index)}
@@ -101,7 +101,7 @@ export function Crouselslider() {
                           y: hoveredIndex === index ? 0 : 40,
                         }}
                         transition={{ duration: 0.3 }}
-                        className="absolute bottom-16 text-white text-2xl font-bold pl-4"
+                        className="absolute bottom-16 text-white text-2xl font-bold pl-4 md:w-52 w-36"
                       >
                         {value.Year}
                       </motion.p>

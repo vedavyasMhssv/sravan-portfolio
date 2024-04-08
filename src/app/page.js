@@ -14,6 +14,7 @@ import orangeBlob from "@/images/common/orange-blob.png";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Crouselslider from "@/components/Crouselslider";
+import Navigatebutton from "@/components/Navigatebutton";
 export default function Home() {
   return (
     <>
@@ -26,6 +27,7 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
+        <Navigatebutton/>
         <Hero />
         <Experience />
         <MyStory />

@@ -48,8 +48,8 @@ const Nav = () => {
       shouldHideOnScroll
     >
       <NavbarBrand className="flex items-center justify-start ">
-        <Image className="rounded-full h-20 w-20 object-contain absolute " src={Logo} />
-        <span className=" font-[Pacifico] md:text-[24px] text-lg font-normal leading-[40px] tracking-wide ml-16">
+        <Image className="rounded-full h-20 w-20 object-contain absolute left-0 " src={Logo} />
+        <span className=" font-[Pacifico] md:text-[24px] text-lg font-normal leading-[40px] tracking-wide ml-10">
           Sravan Kumar Angadi
         </span>
       </NavbarBrand>

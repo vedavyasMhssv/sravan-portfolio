@@ -16,6 +16,7 @@ import expertise from "@/images/lifestyle/expertise.png";
 import vision from "@/images/lifestyle/vision.png";
 import hiring from "@/images/lifestyle/hiring.png";
 import myJourney from "@/images/lifestyle/myJourney.png";
+import Vector from '@/images/Crouselimage/Vector.png'
 
 import arrow from "@/images/common/Arrow.png";
 import { useRouter } from "next/navigation";
@@ -383,6 +384,45 @@ function MyLifestyle() {
               </div>
             );
           })}
+      </div>
+      <div className="md:w-3/4 mx-auto md:p-10 p-3 ">
+        <div className="flex justify-start items-end gap-2">
+          <Image className="mb-6" src={Vector}/>
+          <h6 className="leading-7 tracking-wide uppercase font-semibold w-96">Navigating Life's Pathways with Purpose, attitude and approach.</h6>
+        </div>
+        <div className="flex justify-center md:flex-row flex-col items-center gap-12 mt-8">
+          <div className=" border-l-2 p-4 border-black flex flex-col justify-between items-start gap-16 h-auto">
+            <div>
+              <p className="font-extrabold text-4xl leading-10">01</p>
+              <p className="uppercase font-medium">purpose</p>
+            </div>
+            <div className="flex justify-start items-start gap-2 flex-col">
+              <li className="text-xs font-semibold w-52 text-justify uppercase">{`My philosophy is rooted in the belief that success is achieved through hard work,  determination, and a willingness to take risks.`}</li>
+              <li className="text-xs font-semibold w-52 text-justify uppercase">{`I strive to make a positive impact on the world and give back to society.`}</li>
+            </div>
+          </div>
+          <div className=" border-l-2 p-4 border-black flex flex-col justify-between items-start gap-16 h-auto">
+            <div>
+              <p className="font-extrabold text-4xl leading-10">02</p>
+              <p className="uppercase font-medium">attitude</p>
+            </div>
+            <div className="flex justify-start items-start gap-2 flex-col">
+              <li className="text-xs font-semibold w-52 text-justify uppercase">{`I embrace failure as a natural part of the process and use it as an opportunity to learn, adapt,  and evolve.`}</li>
+              <li className="text-xs font-semibold w-52 text-justify uppercase">{`I understand the value of perseverance and the ability to bounce back from setbacks.`}</li>
+            </div>
+          </div>
+          <div className=" border-l-2 p-4 border-black flex flex-col justify-between items-start gap-16 h-auto">
+            <div>
+              <p className="font-extrabold text-4xl leading-10">03</p>
+              <p className="uppercase font-medium">purpose</p>
+            </div>
+            <div className="flex justify-start items-start gap-2 flex-col">
+              <li className="text-xs font-semibold w-52 text-justify uppercase">{`I embrace the journey of continuous learning and, understanding of knowledge.`}</li>
+              <li className="text-xs font-semibold w-52 text-justify uppercase">{`I remain steadfast in my commitment to staying focused, adaptable, and perpetually in pursuit of knowledge.`}</li>
+            </div>
+          </div>
+         
+        </div>
       </div>
     </div>
   );

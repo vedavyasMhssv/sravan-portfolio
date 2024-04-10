@@ -194,11 +194,10 @@ function SocialFeeds() {
                     />
                   </div> */}
                   {/* {feed.text && <p className="text-[14px]">{feed.text}</p>} */}
-                  {/* <FacebookEmbed
+                  <FacebookEmbed
                     url="https://www.facebook.com/122107936172264450/posts/122107935032264450"
                     width={250}
-                  /> */}
-                    <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" width={550} />
+                  />
 
                   {/* <Image
                     src={feed.cover}

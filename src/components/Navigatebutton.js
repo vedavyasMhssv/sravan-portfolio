@@ -18,7 +18,7 @@ const Navigatebutton = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-12 flex md:flex-row flex-col justify-evenly items-center gap-2 z-20">
+    <div className="fixed bottom-4 md:right-12 right-4 flex md:flex-row flex-col justify-evenly items-center gap-2 z-20">
     <div className=" hidden md:flex ">
 
       <motion.div
@@ -43,7 +43,7 @@ const Navigatebutton = () => {
         exit={{ x: 30, scale: 0, opacity: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Image className="w-24 h-24 hover:ring-1 hover:ring-[#FF7143] rounded-full" src={logo3} />
+        <Image className="md:w-24 md:h-24 h-12 w-12 hover:ring-1 hover:ring-[#FF7143] rounded-full" src={logo3} />
       </motion.div>
     </div>
     <div className="  md:hidden ">
@@ -54,7 +54,7 @@ const Navigatebutton = () => {
         transition={{ duration: 0.8 }}
         whileInView={showLogos ? { scale: 1, y: -70, opacity: 1 } : {}}
       >
-        <Image className="w-24 h-24" src={logo1} />
+        <Image className="md:w-24 md:h-24 h-12 w-12 hover:ring-1 hover:ring-[#FF7143] rounded-full" src={logo1} />
       </motion.div>
       <motion.div
         initial={{ scale: 0, y: 30, opacity: 0 }}
@@ -62,7 +62,7 @@ const Navigatebutton = () => {
         exit={{ y: 50,scale: 0, opacity: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <Image className="w-24 h-24" src={logo2} />
+        <Image className="md:w-24 md:h-24 h-12 w-12 hover:ring-1 hover:ring-[#FF7143] rounded-full" src={logo2} />
       </motion.div>
       <motion.div
         initial={{ scale: 0, y: 30, opacity: 0 }}
@@ -70,7 +70,7 @@ const Navigatebutton = () => {
         exit={{ y: 30, scale: 0, opacity: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Image className="w-24 h-24" src={logo3} />
+        <Image className="md:w-24 md:h-24 h-12 w-12 hover:ring-1 hover:ring-[#FF7143] rounded-full" src={logo3} />
       </motion.div>
     </div>
       <div className="flex justify-center items-center">
@@ -78,18 +78,18 @@ const Navigatebutton = () => {
           id="orbitOne"
           whileTap={{ scale: 0.9 }}
           onClick={toggleLogos}
-          className="flex justify-center items-center "
+          className="flex justify-center items-center   "
         >
-          <Image className="md:w-32 md:h-32 w-28 h-28 rounded-full" src={ring} />
+          <Image className="md:w-32 md:h-32 w-16 h-16 rounded-full " src={ring} />
         </motion.div>
         <motion.div
           whileTap={{ scale: 0.9 }}
           animate={{ rotate: rotated ? 180 : 0 }}
           transition={{ duration: 0.5 }}
           onClick={toggleLogos}
-          className="fixed"
+          className="absolute"
         >
-          <Image className=" md:w-28 md:h-28 h-24 w-24 rounded-full" src={ring2} />
+          <Image className=" md:w-28 md:h-28 h-12 w-12 rounded-full" src={ring2} />
         </motion.div>
       </div>
     </div>

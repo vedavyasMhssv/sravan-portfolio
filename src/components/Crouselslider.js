@@ -72,11 +72,11 @@ export function Crouselslider() {
 
   return (
     <div className="w-full h-auto py-32 gap-8 flex md:flex-row flex-col justify-between items-center px-2">
-      <div className="flex flex-col justify-start items-start gap-2 md:pl-20 pl-12 ">
+      <div className="flex flex-col justify-start items-start gap-2 md:pl-20 pl-16 ">
         <p className="uppercase text-xs text-gray-400">
           Journey throughout the years of my life.
         </p>
-        <h6 className="text-4xl font-bold uppercase w-96">
+        <h6 className="md:text-4xl text-3xl font-bold uppercase w-96">
           Voyage<br></br> through the{" "}
           <span className="text-[#FF7143]">chapters</span> of my existence.
         </h6>
@@ -113,7 +113,7 @@ export function Crouselslider() {
                           {value.Year}
                         </h6>
                         <motion.p
-                          className="text-lg font-semibold md:w-52 w-36 text-[--color-theme]"
+                          className="md:text-lg text-md font-semibold md:w-52 w-36 text-[--color-theme]"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{
                             opacity: hoveredIndex === index ? 1 : 0,
@@ -124,7 +124,7 @@ export function Crouselslider() {
                           {value.title}
                         </motion.p>
                         <motion.p
-                          className="text-white text-xs md:w-52 w-36"
+                          className="text-white text-xs md:w-52 w-32"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{
                             opacity: hoveredIndex === index ? 1 : 0,

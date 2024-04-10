@@ -10,16 +10,16 @@ function MyStory() {
   return (
     <div className="flex flex-col">
       {" "}
-      <div className="flex  justify-center text-right">
+      <div className="flex py-12 mb-8 gap-12  justify-center text-right">
         <motion.div
           // reveals content from left to right
           initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
           whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className=" text-4xl md:text-8xl font-bold "
+          transition={{ duration: 2 }}
+          className=" text-3xl md:text-8xl leading-10 font-semibold "
         >
-          <p className="text-[--color-theme]">MY</p>
+          <p className="text-[--color-theme] ">MY</p>
           STORY.
         </motion.div>
         <div className="relative min-h-[60px] min-w-[60px] md:min-h-[140px] md:min-w-[140px] ms-5 flex items-end">
@@ -27,7 +27,7 @@ function MyStory() {
             whileInView={{ rotate: "-135deg" }}
             transition={{
               ease: "linear",
-              duration: 0.3,
+              duration: 2,
               repeat: 0,
             }}
             viewport={{ once: true }}

@@ -3,9 +3,35 @@ import React, { useLayoutEffect } from "react";
 import Image from "next/image";
 import arrow from "@/images/common/Arrow.png";
 import { useRouter } from "next/navigation";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
 
 function Page() {
   const router = useRouter();
+  const [api, setApi] = React.useState();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
   const quotes = [
     {
       quote:
@@ -31,7 +57,11 @@ function Page() {
       author: "Abraham Lincoln",
     },
   ];
-
+ 
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+ 
   useLayoutEffect(() => {
     const body = document.getElementsByTagName("body");
     body[0].style.backgroundColor = "white";
@@ -43,8 +73,8 @@ function Page() {
     };
   }, []);
   return (
-    <div className="pt-20 min-h-[100vh]">
-      <div className="flex items-center border-b-2 border-b-[#858585] max-w-[800px] mx-auto py-5  ">
+    <div className="pt-16 min-h-[100vh]">
+      <div className="flex items-center pb-8 border-b-2 border-b-[#858585] max-w-[800px] mx-auto py-5  ">
         <Image
           src={arrow}
           style={{
@@ -57,22 +87,38 @@ function Page() {
         />
         <p className="text-5xl uppercase font-bold">QUOTES I FOUND</p>
       </div>
-      <div className="mt-20  max-w-[800px] mx-auto">
-        {quotes.map((quote) => {
-          return (
-            <div className="flex flex-col mb-20">
+      <div className="mt-20   w-full flex justify-center items-center mx-auto">
+      <Carousel
+          setApi={setApi}
+          plugins={[plugin.current]}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+          opts={{
+            align: "center",
+          }}
+          orientation="vertical"
+          className="w-full flex justify-center items-center text-center"
+        >
+          <CarouselContent className="-mt-1 h-[400px] w-full mx-auto">
+            {quotes.map((value, index) => (
+              <CarouselItem key={index} className="pt-1 md:basis-1/1 w-11/12 mx-auto">
+              <div className="flex flex-col mb-20 w-full">
               <p
                 className="text-5xl font-normal leading-relaxed text-center"
                 style={{ fontFamily: "Pacifico" }}
               >
-                {quote.quote}
+                {value.quote}
               </p>
               <p className="text-center font-bold mt-5 text-3xl tracking-widest">
-                - {quote.author}
+                - {value.author}
               </p>
             </div>
-          );
-        })}
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {/* <CarouselPrevious />
+      <CarouselNext /> */}
+        </Carousel>
       </div>
     </div>
   );

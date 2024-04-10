@@ -84,7 +84,7 @@ export default function Home() {
 
           </div>
           <div id="section3">
-          <OurWorks />
+          {/* <OurWorks /> */}
 
           </div>
           {/* <RatingsAndClients /> */}
@@ -103,7 +103,7 @@ export default function Home() {
             className="absolute right-[-450px] top-[400px] min-h-[500px] min-w-[700px]"
           />
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </NextUIProvider>
     </>
   );

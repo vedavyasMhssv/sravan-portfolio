@@ -3,14 +3,43 @@ import React, { useLayoutEffect } from "react";
 import Image from "next/image";
 import arrow from "@/images/common/Arrow.png";
 import { useRouter } from "next/navigation";
-
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import photography from "@/images/lifestyle/my-hobbies/photography.png";
 import reading from "@/images/lifestyle/my-hobbies/reading.png";
 import tennis from "@/images/lifestyle/my-hobbies/tennis.png";
 import travelling from "@/images/lifestyle/my-hobbies/travelling.png";
+import Autoplay from "embla-carousel-autoplay";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Page() {
   const router = useRouter();
+  const [api, setApi] = React.useState();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   const hobbies = [
     {
       image: travelling,
@@ -45,8 +74,8 @@ function Page() {
     };
   }, []);
   return (
-    <div className="pt-20 min-h-[100vh]">
-      <div className="flex items-center border-b-2 border-b-[#858585] max-w-[800px] mx-auto py-5  ">
+    <div className="pt-16 min-h-[100vh]">
+      <div className="flex items-center gap-2 pb-8 border-b-2 border-b-[#858585] max-w-[80%] mx-auto py-5  ">
         <Image
           src={arrow}
           style={{
@@ -59,23 +88,59 @@ function Page() {
         />
         <p className="text-5xl uppercase font-bold"> my hobbies</p>
       </div>
-      <div className="mt-10  max-w-[800px] mx-auto">
-        {hobbies.map((hobby) => {
-          return (
-            <div className="flex flex-wrap items-center flex-col md:flex-row gap-[20px] mb-10 px-5">
-              <div className="flex-1 flex items-center justify-center">
-                <Image
-                  src={hobby.image}
-                  style={{ width: "75%", height: "auto", minWidth: "150px" }}
-                />
-              </div>
-              <div className="flex-1">
-                <p className="uppercase font-bold text-3xl">{hobby.title}</p>
-                <p className="text-justify">{hobby.text}</p>
-              </div>
-            </div>
-          );
-        })}
+      <div className="mt-12 flex justify-between items-center  max-w-[800px] mx-auto">
+        <Carousel
+          setApi={setApi}
+          plugins={[plugin.current]}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+          opts={{
+            align: "start",
+          }}
+          orientation="vertical"
+          className="w-full max-w-xs"
+        >
+          <CarouselContent className="-mt-1 h-[350px]">
+            {hobbies.map((value, index) => (
+              <CarouselItem key={index} className="pt-1 md:basis-1/1">
+                <div className="p-1 h-auto">
+                  <Image src={value.image} />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {/* <CarouselPrevious />
+      <CarouselNext /> */}
+        </Carousel>
+        <div className="w-2/4">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="p-1 flex justify-start items-start gap-4 flex-col h-auto"
+          >
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="uppercase text-lg font-bold"
+            >
+              {hobbies[current - 1]?.title}
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 ,y:20}}
+              animate={{ opacity: 1 ,y:0}}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="text-base font-medium text-justify"
+            >
+              {hobbies[current - 1]?.text}
+            </motion.p>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

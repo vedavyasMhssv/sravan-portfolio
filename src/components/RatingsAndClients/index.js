@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useAnimate, stagger,motion } from "framer-motion"
 
 import alpha from "@/images/our-clients/alpha.png";
 import amazon from "@/images/our-clients/amazon.png";
@@ -57,10 +57,10 @@ function RatingsAndClients() {
   ];
   return (
     <div className="bg-white text-black py-10">
-      <div className="mt-5 mb-20  p-10 flex flex-wrap  md:max-w-[80%] mx-auto">
-        <div className="flex flex-col flex-1 px-10 relative">
+      <div className="mt-5 md:mb-20 mb-20 md:p-10 flex flex-col md:flex-row  md:max-w-[90%] mx-auto">
+        <div className="flex flex-col flex-1 md:px-10 px-5 relative">
           <motion.div
-            className="text-3xl font-bold leading-9 tracking-wide  text-black relative"
+            className="text-2xl font-bold leading-7 tracking-wide text-justify break-all uppercase text-black relative"
             initial={{ opacity: 0, left: "-30%" }}
             whileInView={{ opacity: 1, left: "0%" }}
             transition={{
@@ -71,10 +71,10 @@ function RatingsAndClients() {
             viewport={{ once: true }}
           >
             your satisfaction is my first priority. Delightful Testimonials from
-            Our Satisfied Clients!
+            Our<br></br> Satisfied Clients!
           </motion.div>
           <motion.div
-            className="flex-1 relative px-5 py-3 "
+            className="flex-1 relative px-5 py-3 md:w-[24rem]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{
@@ -95,32 +95,32 @@ function RatingsAndClients() {
             />
           </motion.div>
         </div>
-        <div className="flex flex-col flex-1 min-h-[50px] px-16  justify-between relative">
+        <div className="flex flex-col flex-1 min-h-[50px] md:px-16 px-8 mt-4 md:mt-0  justify-between relative">
           {ratings &&
             ratings.map((rating, index) => {
               return (
                 <motion.div
-                  className="flex flex-col border-b border-b-black relative"
+                  className="flex flex-col gap-2 border-b border-b-black relative"
                   initial={{ opacity: 0, right: "-30%" }}
                   whileInView={{ opacity: 1, right: "0%" }}
                   transition={{
                     ease: [0.32, -0.26, 0.39, 1.43],
-                    duration: 1 * index + 1,
+                    duration: 0.2 * index + 1,
                     repeat: 0,
                   }}
                   viewport={{ once: true }}
                   key={index}
                 >
-                  <p className="text-sm font-semibold leading-tight text-justify">
+                  <p className="text-xs  font-semibold leading-tight text-justify">
                     {rating.content}
                   </p>
-                  <div className="flex my-1 justify-between items-center">
+                  <div className="flex my-1 justify-between items-center uppercase">
                     <p>
-                      <span className="text-lg font-bold leading-snug">
+                      <span className="text-base font-bold leading-snug">
                         {rating.name}
                       </span>{" "}
                       -{" "}
-                      <span className="text-base font-medium leading-tight">
+                      <span className="text-xs font-medium leading-tight">
                         {" "}
                         {rating.role}
                       </span>

@@ -40,7 +40,7 @@ function FoundersMission() {
         </p>
       </div>
       <hr className="text-black" />
-      <div className="accordion text-black mx-72 ">
+      <div className="accordion text-black md:mx-72 mx-2">
         {dummyItems.map((item, index) => (
           <div
             key={index}

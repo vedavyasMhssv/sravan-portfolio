@@ -72,11 +72,11 @@ export function Crouselslider() {
 
   return (
     <div className="w-full h-auto py-32 gap-8 flex md:flex-row flex-col justify-between items-center px-2">
-      <div className="flex flex-col justify-start items-start gap-2 md:pl-20 pl-12 ">
+      <div className="flex flex-col justify-start items-start gap-2 md:pl-20 pl-16 ">
         <p className="uppercase text-xs text-gray-400">
           Journey throughout the years of my life.
         </p>
-        <h6 className="text-4xl font-bold uppercase w-96">
+        <h6 className="md:text-4xl text-3xl font-bold uppercase w-96">
           Voyage<br></br> through the{" "}
           <span className="text-[#FF7143]">chapters</span> of my existence.
         </h6>
@@ -90,7 +90,7 @@ export function Crouselslider() {
                 className="basis-1/2 md:basis-1/3 lg:basis-1/3"
               >
                 <div className="">
-                  <Card className="w-auto h-auto rounded-none bg-red-400">
+                  <Card className="w-auto h-auto rounded-none">
                     <CardContent
                       className="flex p-0"
                       onMouseOver={() => setHoveredIndex(index)}
@@ -113,7 +113,7 @@ export function Crouselslider() {
                           {value.Year}
                         </h6>
                         <motion.p
-                          className="text-lg font-semibold md:w-52 w-36 text-[--color-theme]"
+                          className="md:text-lg text-md font-semibold md:w-52 w-36 text-[--color-theme]"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{
                             opacity: hoveredIndex === index ? 1 : 0,
@@ -124,7 +124,7 @@ export function Crouselslider() {
                           {value.title}
                         </motion.p>
                         <motion.p
-                          className="text-white text-xs md:w-52 w-36"
+                          className="text-white text-xs md:w-52 w-32"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{
                             opacity: hoveredIndex === index ? 1 : 0,
@@ -143,7 +143,7 @@ export function Crouselslider() {
                           y: hoveredIndex === index ? 0 : 40,
                         }}
                         transition={{ duration: 0.3 }}
-                        className="absolute bottom-16 text-white text-2xl font-bold pl-4"
+                        className="absolute bottom-16 text-white text-2xl font-bold pl-4 md:w-52 w-36"
                       >
                         {value.Year}
                       </motion.p>

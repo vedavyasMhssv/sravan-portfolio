@@ -61,10 +61,10 @@ function MyStory() {
           wealth, and happiness to all involved.
         </p>
       </div>
-      <div className="mt-10 md:max-w-[800px] mx-auto text-center flex flex-wrap border border-white overflow-hidden">
+      <div className="mt-10 md:max-w-[800px] w-full mx-auto text-center flex   border-white border ">
         <div className="flex-1 relative">
           <Image
-            className="absolute"
+            className="absolute "
             src={sravan}
             height={100}
             width={100}

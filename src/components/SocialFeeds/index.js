@@ -32,7 +32,7 @@ function SocialFeeds() {
       text: "This is a sample text!",
       cover: (
         <FacebookEmbed
-          url="https://www.facebook.com/andrewismusic/posts/451971596293956"
+          url="https://www.facebook.com/122107936172264450/posts/122107935032264450"
           width={550}
         />
       ),
@@ -194,11 +194,11 @@ function SocialFeeds() {
                     />
                   </div> */}
                   {/* {feed.text && <p className="text-[14px]">{feed.text}</p>} */}
-                  <LinkedInEmbed
-                    url="https://www.linkedin.com/embed/feed/update/urn:li:share:7103454613785198593"
+                  <FacebookEmbed
+                    url="https://www.facebook.com/122107936172264450/posts/122107935032264450"
                     width={250}
-                    height={350}
                   />
+
                   {/* <Image
                     src={feed.cover}
                     height={50}

@@ -47,7 +47,7 @@ function ContactMe() {
           secondary: "#FFFAEE",
         },
       });
-      setLoading(false);
+      setLoading(false)
       return;
     }
     const templateParams = {
@@ -75,10 +75,23 @@ function ContactMe() {
                 secondary: "#FFFAEE",
               },
             });
+            setLoading(false)
           }
         },
         (error) => {
           console.log(error.text);
+          toast.error("Message Failed!", {
+            style: {
+              border: "1px solid white",
+              padding: "16px",
+              color: "white",
+              backgroundColor: "black",
+            },
+            iconTheme: {
+              primary: "red",
+              secondary: "#FFFAEE",
+            },
+          });
         }
       
         
@@ -91,7 +104,6 @@ function ContactMe() {
     setMessage("");
     setPhone("");
     setlastName("");
-    setLoading(false);
   };
 
   return (

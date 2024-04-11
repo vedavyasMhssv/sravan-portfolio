@@ -7,8 +7,11 @@ import visioneye from "@/images/Crouselimage/vision-eye.png";
 import mission from "@/images/Crouselimage/mission.png";
 import missiongoal from "@/images/Crouselimage/mission-goal.png";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 function Page() {
+  const router = useRouter();
+
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useLayoutEffect(() => {

@@ -32,7 +32,7 @@ export default function Home() {
   useGSAP(() => {
     const button = document.querySelector("#Mystory");
     const button1 = document.querySelector("#Service");
-    const button2 = document.querySelector("#Works");
+    // const button2 = document.querySelector("#Works");
     const button3 = document.querySelector("#Social");
     const button4 = document.querySelector("#letsTalkBtn");
 
@@ -42,9 +42,9 @@ export default function Home() {
     button1.addEventListener("click", () => {
       gsap.to(window, {duration: 2, scrollTo:{y:"#section2", offsetY:70},ease:"back.out"});
     });
-    button2.addEventListener("click", () => {
-      gsap.to(window, {duration: 3, scrollTo:{y:"#section3", offsetY:70},ease:"back.out"});
-    });
+    // button2.addEventListener("click", () => {
+    //   gsap.to(window, {duration: 3, scrollTo:{y:"#section3", offsetY:70},ease:"back.out"});
+    // });
     button3.addEventListener("click", () => {
       gsap.to(window, {duration: 4, scrollTo:{y:"#section4", offsetY:70},ease:"back.out"});
     });

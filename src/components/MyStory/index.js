@@ -15,7 +15,7 @@ function MyStory() {
           // reveals content from left to right
           initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
           whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 2 }}
           className=" text-3xl md:text-8xl leading-10 font-semibold "
         >
@@ -30,7 +30,7 @@ function MyStory() {
               duration: 2,
               repeat: 0,
             }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="text-white flex items-end min-h-[60px] min-w-[60px] md:min-h-[140px] md:min-w-[140px]"
           >
             <Image
@@ -93,7 +93,7 @@ function MyStory() {
           </p>
         </div>
       </div>
-       <div>
+       <div className="py-28">
         <Crouselslider/>
        </div>
     </div>

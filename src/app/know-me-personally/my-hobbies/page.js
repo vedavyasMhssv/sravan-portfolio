@@ -92,8 +92,8 @@ function Page() {
         <Carousel
           setApi={setApi}
           plugins={[plugin.current]}
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.reset}
+          // onMouseEnter={plugin.current.stop}
+          // onMouseLeave={plugin.current.reset}
           opts={{
             align: "start",
           }}

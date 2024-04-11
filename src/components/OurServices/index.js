@@ -23,6 +23,9 @@ import franchise from "../../images/Crouselimage/franchise.png";
 import expanstion from "../../images/Crouselimage/expanstion.png";
 import bussiness from "../../images/Crouselimage/bussiness.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import arrow from "@/images/common/ArrowWhite.png";
+
 
 function OurServices() {
   const data = [
@@ -94,7 +97,39 @@ function OurServices() {
   return (
     <div className="flex w-full flex-col justify-center items-center md:gap-8 gap-12  mx-auto px-8 py-8 ">
       <div>
-        <h1>Our Services</h1>
+      <div className="flex py-12 mb-8 gap-12  justify-center text-right">
+        <motion.div
+          // reveals content from left to right
+          initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
+          whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          viewport={{ once: false }}
+          transition={{ duration: 2 }}
+          className=" text-3xl md:text-8xl leading-10 font-semibold uppercase "
+        >
+          <p className="text-[--color-theme] ">Our</p>
+          Service.
+        </motion.div>
+        <div className="relative min-h-[60px] min-w-[60px] md:min-h-[140px] md:min-w-[140px] ms-5 flex items-end">
+          <motion.div
+            whileInView={{ rotate: "-135deg" }}
+            transition={{
+              ease: "linear",
+              duration: 2,
+              repeat: 0,
+            }}
+            viewport={{ once: false }}
+            className="text-white flex items-end min-h-[60px] min-w-[60px] md:min-h-[140px] md:min-w-[140px]"
+          >
+            <Image
+              src={arrow}
+              height={60}
+              width={60}
+              className="h-[60px] w-[60px] md:h-[120px] md:w-[120px]"
+              unoptimized
+            />
+          </motion.div>
+        </div>
+      </div>
       </div>
       <div className="flex justify-start items-center  gap-4 flex-col w-full mx-auto  ">
         <Carousel

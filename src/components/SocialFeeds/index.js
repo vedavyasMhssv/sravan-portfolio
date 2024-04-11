@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import arrow from "@/images/common/Arrow.png";
 import Image from "next/image";
@@ -18,89 +18,56 @@ import { InstagramEmbed } from "react-social-media-embed";
 import { LinkedInEmbed } from "react-social-media-embed";
 import { XEmbed } from "react-social-media-embed";
 import { YouTubeEmbed } from "react-social-media-embed";
+import axios from "axios";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+
 function SocialFeeds() {
   const [selected, setSelected] = useState(1);
-  const socialFeeds = [
-    {
-      image: user,
-      name: "Name",
-      userName: "",
-      fromMedia: "fb",
-      socialImg: fb,
-      text: "This is a sample text!",
-      cover: (
-        <FacebookEmbed
-          url="https://www.facebook.com/122107936172264450/posts/122107935032264450"
-          width={550}
-        />
-      ),
-    },
-    {
-      image: user,
-      name: "Name",
-      userName: "@username",
-      fromMedia: "instagram",
-      socialImg: insta,
-      text: "This is a paragraph with more information about something important.",
-      cover: dummyImageTwo,
-    },
-    {
-      image: user,
-      name: "Name",
-      userName: "",
-      fromMedia: "twitter",
-      socialImg: twitter,
-      text: "This is a sample text!",
-      cover: dummyImageOne,
-    },
-    {
-      image: user,
-      name: "Name",
-      userName: "@username",
-      fromMedia: "linkedin",
-      socialImg: linkedin,
-      text: "This is a paragraph with more information about something important. This something has many uses and is made of 100% recycled material.",
-      cover: dummyImageTwo,
-    },
-    {
-      image: user,
-      name: "Name",
-      userName: "@username",
-      fromMedia: "youtube",
-      socialImg: yt,
-      text: "",
-      cover: dummyImageOne,
-    },
-    {
-      image: user,
-      name: "Name",
-      userName: "",
-      fromMedia: "facebook",
-      socialImg: fb,
-      text: "This is a paragraph with more information about something important.",
-      cover: dummyImageTwo,
-    },
-    {
-      image: user,
-      name: "Name",
-      userName: "@username",
-      fromMedia: "instagram",
-      socialImg: insta,
-      text: "This is a sample text!",
-      cover: dummyImageOne,
-    },
-    {
-      image: user,
-      name: "Name",
-      userName: "@username",
-      fromMedia: "instagram",
-      socialImg: yt,
-      text: "This is a sample text!",
-      cover: dummyImageTwo,
-    },
-  ];
+  const [instagramData, setInstagramData] = useState();
+  const [feed, setFeed] = useState();
+  const [error, setError] = useState(null);
+
+  const datainone = [feed, instagramData];
+
+  const fetchData = async () => {
+    const token = `IGQWRPa2RrM3hDUzNGNGVHSVZArNDRaVEQ4bzAxVjdkdVd4VWYxdTBxcnR1RTJUZAkt0aDVzUlZALa1U4VTNCMTBFVEtMR0JnSF9LQjdmcVg1MEphSzdJZAFdCcHhzYy1MRHczUXNuUlZA3WGgyXzNDTnBEdklwSHo0TmMZD`;
+    try {
+      const response = await axios.get(
+        `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink,username&access_token=${token}`
+      );
+      if (response.status !== 200) {
+        throw new Error("Failed to fetch data");
+      }
+      setInstagramData(response.data);
+    } catch (error) {
+      console.log(error);
+      setError(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const accessToken =
+      "EAASC9UYZB6a8BO5XtRQJz55FH52SZC9OwEtQZBZBFvKmQZClkLvBhEcDkTuEcBVxwfaGFvBe6mZAKdNxJnGjZAUd7TPHhZBlrGx6VDW38RzbMN8x54ZCH4Oh9vTdCmkFbj8cLjfatUVc0fFvURaFfuYtGQPIppB8fEK7s6tGS0PpP9pDVRpscPr8uJnK4";
+    const fields = "id,message,created_time,full_picture,permalink_url";
+    const apiUrl = `https://graph.facebook.com/v12.0/me/feed?fields=${fields}&access_token=${accessToken}`;
+
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        setFeed(response.data.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  console.log(feed, `here`);
+
   const media = [
     { name: "AWT", id: 1 },
     { name: "QR ANGADI", id: 2 },
@@ -109,15 +76,15 @@ function SocialFeeds() {
   return (
     <div className="bg-white py-10">
       {" "}
-      <div className="flex justify-center text-right mb-10">
+      <div className="flex justify-center text-right mb-10 py-12">
         <motion.div
           // reveals content from left to right
           initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
           whileInView={{
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
           }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+          transition={{ duration: 2 }}
           className=" text-4xl md:text-8xl font-bold text-black "
         >
           <p className="text-[--color-theme]">SOCIAL</p>
@@ -128,10 +95,10 @@ function SocialFeeds() {
             whileInView={{ rotate: "-135deg" }}
             transition={{
               ease: "linear",
-              duration: 0.3,
+              duration: 2,
               repeat: 0,
             }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="text-black flex items-end min-h-[60px] min-w-[60px] md:min-h-[140px] md:min-w-[140px] absolute"
           >
             <Image
@@ -160,14 +127,14 @@ function SocialFeeds() {
           );
         })}
       </div>
-      <div className="max-w-[900px] mx-auto mt-10 px-10">
+      <div className="w-11/12 mx-auto mt-10 px-10">
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 500: 2, 800: 3 }}>
           <Masonry gutter="10px">
-            {socialFeeds.map((feed, index) => {
+            {instagramData?.data?.map((value, index) => {
               return (
                 <div
                   key={index}
-                  className="px-2 py-4 border border-black max-h-fit rounded-lg flex flex-col text-black"
+                  className="px-2 py-4 w-auto border border-black max-h-fit rounded-lg flex flex-col text-black"
                   style={{
                     minHeight: "fit-content",
                     boxShadow: "5px 6px 0px 0px #000000B0",
@@ -194,10 +161,7 @@ function SocialFeeds() {
                     />
                   </div> */}
                   {/* {feed.text && <p className="text-[14px]">{feed.text}</p>} */}
-                  <FacebookEmbed
-                    url="https://www.facebook.com/122107936172264450/posts/122107935032264450"
-                    width={250}
-                  />
+                  <InstagramEmbed url={value.permalink} width={340} />
 
                   {/* <Image
                     src={feed.cover}

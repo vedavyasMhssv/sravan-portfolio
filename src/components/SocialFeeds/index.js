@@ -134,7 +134,7 @@ function SocialFeeds() {
               return (
                 <div
                   key={index}
-                  className="px-2 py-4 w-auto border border-black max-h-fit rounded-lg flex flex-col text-black"
+                  className="px-2 py-4 w-auto border border-black max-h-fit rounded-lg flex flex-col justify-center items-center mx-auto text-black"
                   style={{
                     minHeight: "fit-content",
                     boxShadow: "5px 6px 0px 0px #000000B0",
@@ -161,7 +161,7 @@ function SocialFeeds() {
                     />
                   </div> */}
                   {/* {feed.text && <p className="text-[14px]">{feed.text}</p>} */}
-                  <InstagramEmbed url={value.permalink} width={340} />
+                  <InstagramEmbed url={value.permalink} width={350} />
 
                   {/* <Image
                     src={feed.cover}

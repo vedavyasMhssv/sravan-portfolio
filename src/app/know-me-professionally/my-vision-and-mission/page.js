@@ -26,7 +26,14 @@ function Page() {
   }, []);
 
   return (
-    <div className="pt-8 min-h-[100vh]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{ duration: 2 }}
+      className="pt-8 min-h-[100vh]"
+    >
       <div className="flex items-center gap-2  border-b-2 border-b-[#858585] max-w-[90%] mx-auto py-5  ">
         <Image
           src={arrow}
@@ -71,7 +78,7 @@ function Page() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="w-[24rem] text-justify break-all z-10"
             >
-             {` To create a dynamic and informative digital solutions that  serves
+              {` To create a dynamic and informative digital solutions that  serves
               as a hub of knowledge and inspiration for aspiring  entrepreneurs
               looking to start, grow and scale their  businesses.`}
             </motion.p>
@@ -87,7 +94,10 @@ function Page() {
               vision
             </motion.p>
           </div>
-          <Image className="absolute bottom-[7.2rem] h-28 w-28 " src={visioneye} />
+          <Image
+            className="absolute bottom-[7.2rem] h-28 w-28 "
+            src={visioneye}
+          />
         </motion.div>
         <motion.div
           onMouseOver={() => setHoveredIndex(2)}
@@ -118,26 +128,27 @@ function Page() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="w-[24rem] text-justify break-all z-10"
             >
-             {`My mission is to empower entrepreneurs with the  resources, tools and information they need to succeed in  their business ventures. Through our platform, we aim to  provide actionable insights, expert guidance, and valuable  resources to help entrepreneurs achieve their goals.`}
+              {`My mission is to empower entrepreneurs with the  resources, tools and information they need to succeed in  their business ventures. Through our platform, we aim to  provide actionable insights, expert guidance, and valuable  resources to help entrepreneurs achieve their goals.`}
             </motion.p>
             <motion.p
               initial={{ opacity: 1, y: 0, color: "black" }}
               animate={{
-                y: hoveredIndex === 2 ? 40 : 0,
+                y: hoveredIndex === 2 ? 10 : -40,
                 color: hoveredIndex === 2 ? "white" : "black",
               }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              transition={{ duration: 0.8,  }}
               className="font-bold leading-7 text-2xl uppercase"
             >
-             mission
+              mission
             </motion.p>
           </div>
-          <Image className="absolute bottom-[7.2rem] h-28 w-28  " src={missiongoal} />
+          <Image
+            className="absolute bottom-[7.2rem] h-28 w-28  "
+            src={missiongoal}
+          />
         </motion.div>
-
-      
       </div>
-    </div>
+    </motion.div>
   );
 }
 

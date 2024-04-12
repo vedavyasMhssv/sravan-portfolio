@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import arrow from "@/images/common/tiltedArrow.png";
+import Accordiancustom from "../Accordiancustom";
 function FoundersMission() {
   const [activeIndex, setActiveIndex] = useState(null);
   const toggleAccordion = (index) => {
@@ -40,7 +41,8 @@ function FoundersMission() {
         </p>
       </div>
       <hr className="text-black" />
-      <div className="accordion text-black md:mx-72 mx-2">
+      <Accordiancustom/>
+      {/* <div className="accordion text-black md:mx-72 mx-2">
         {dummyItems.map((item, index) => (
           <div
             key={index}
@@ -87,7 +89,7 @@ function FoundersMission() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

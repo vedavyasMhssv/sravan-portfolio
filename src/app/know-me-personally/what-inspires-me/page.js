@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import bryant from "@/images/lifestyle/inspiration/bryant.png";
 import grant from "@/images/lifestyle/inspiration/grant.png";
 import jenni from "@/images/lifestyle/inspiration/jenni.png";
+import { motion } from "framer-motion";
 
 function Page() {
   const router = useRouter();
@@ -39,8 +40,15 @@ function Page() {
     };
   }, []);
   return (
-    <div className="md:pt-20 p-2 md:p-0 min-h-[100vh]">
-      <div className="flex items-center border-b-2 border-b-[#858585] max-w-[800px] mx-auto py-5  ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{ duration: 2 }}
+      className="md:pt-14 p-2 md:p-0 min-h-[100vh]"
+    >
+      <div className="flex items-center border-b-2 border-b-[#858585] w-[90%] mx-auto py-5  ">
         <Image
           src={arrow}
           style={{
@@ -61,27 +69,27 @@ function Page() {
                 index % 2 != 0 ? "flex-wrap-reverse" : "flex-wrap"
               } items-center p-5 ${
                 index % 2 != 0 ? "flex-row" : "flex-col"
-              } md:flex-row gap-[20px] max-w-[900px] mx-auto`}
+              } md:flex-row gap-24 w-[80%] mx-auto`}
             >
               {index % 2 == 0 && (
-                <div className="flex-[0.5]">
-                  <Image src={person.image} className="min-w-[200px]" />
+                <div className="">
+                  <Image src={person.image} className="h-80 w-96" />
                 </div>
               )}
               <div className="flex-1">
-                <p className="uppercase font-bold text-3xl">{person.name}</p>
-                <p>{person.about}</p>
+                <p className="uppercase font-bold text-3xl mb-4">{person.name}</p>
+                <p className="text-justify leading-7">{person.about}</p>
               </div>
               {index % 2 != 0 && (
-                <div className="flex-[0.5]">
-                  <Image src={person.image} className="min-w-[200px]" />
+                <div className="">
+                  <Image src={person.image} className="h-80 w-96" />
                 </div>
               )}
             </div>
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

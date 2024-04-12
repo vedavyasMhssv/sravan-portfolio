@@ -13,16 +13,13 @@ import ContactMe from "@/components/ContactMe";
 
 import orangeBlob from "@/images/common/orange-blob.png";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Crouselslider from "@/components/Crouselslider";
 import Navigatebutton from "@/components/Navigatebutton";
 import { NextUIProvider } from "@nextui-org/react";
 import Nav from "@/components/Navbar";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { motion } from "framer-motion";
 
 export default function Home() {
 
@@ -57,7 +54,13 @@ export default function Home() {
 ); 
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{ duration: 1 }}
+      exit={{opacity:0}}>
       <NextUIProvider>
         <div className=" w-full fixed z-10 p-1">
           <Nav />
@@ -105,6 +108,6 @@ export default function Home() {
         </div>
         <Footer />
       </NextUIProvider>
-    </>
+    </motion.div>
   );
 }

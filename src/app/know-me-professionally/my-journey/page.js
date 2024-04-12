@@ -4,6 +4,8 @@ import Image from "next/image";
 import arrow from "@/images/common/Arrow.png";
 import { useRouter } from "next/navigation";
 import Crouselslider from "@/components/Crouselslider";
+import { motion } from "framer-motion";
+
 
 function Page() {
   const router = useRouter();
@@ -22,7 +24,11 @@ function Page() {
   }, []);
 
   return (
-    <div className="md:pt-16 min-h-[100vh]">
+    <motion.div    initial={{ opacity: 0 }}
+    whileInView={{
+      opacity: 1,
+    }}
+    transition={{ duration: 2 }} className="md:pt-16 min-h-[100vh]">
     <div className="flex items-center gap-2  border-b-2 border-b-[#858585] max-w-[90%] mx-auto py-5  ">
       <Image
         src={arrow}
@@ -41,7 +47,7 @@ function Page() {
      <Crouselslider/>
      </div>
 
-    </div>
+    </motion.div>
   )
 }
 

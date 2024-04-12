@@ -74,8 +74,8 @@ function Page() {
     };
   }, []);
   return (
-    <div className="pt-16 min-h-[100vh]">
-      <div className="flex items-center gap-2 pb-8 border-b-2 border-b-[#858585] max-w-[80%] mx-auto py-5  ">
+    <div className="md:pt-16 min-h-[100vh]">
+      <div className="flex items-center gap-2 md:pb-8 border-b-2 border-b-[#858585] max-w-[80%] mx-auto py-5  ">
         <Image
           src={arrow}
           style={{
@@ -86,9 +86,9 @@ function Page() {
           }}
           onClick={() => router.back()}
         />
-        <p className="text-5xl uppercase font-bold"> my hobbies</p>
+        <p className="md:text-5xl uppercase font-bold"> my hobbies</p>
       </div>
-      <div className="mt-12 flex justify-between items-center  max-w-[800px] mx-auto">
+      <div className="mt-12 flex-col md:flex-row flex justify-between items-center  max-w-[800px] mx-auto">
         <Carousel
           setApi={setApi}
           plugins={[plugin.current]}
@@ -100,7 +100,7 @@ function Page() {
           orientation="vertical"
           className="w-full max-w-xs"
         >
-          <CarouselContent className="-mt-1 h-[350px]">
+          <CarouselContent className="-mt-1 md:h-[350px] h-80">
             {hobbies.map((value, index) => (
               <CarouselItem key={index} className="pt-1 md:basis-1/1">
                 <div className="p-1 h-auto">
@@ -112,7 +112,7 @@ function Page() {
           {/* <CarouselPrevious />
       <CarouselNext /> */}
         </Carousel>
-        <div className="w-2/4">
+        <div className="md:w-2/4 px-4 md:px-0">
           <motion.div
             key={current}
             initial={{ opacity: 0 }}
@@ -135,7 +135,7 @@ function Page() {
               animate={{ opacity: 1 ,y:0}}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
-              className="text-base font-medium text-justify"
+              className="md:text-base font-medium text-justify text-xs"
             >
               {hobbies[current - 1]?.text}
             </motion.p>

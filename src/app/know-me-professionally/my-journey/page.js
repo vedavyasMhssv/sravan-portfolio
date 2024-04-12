@@ -22,7 +22,7 @@ function Page() {
   }, []);
 
   return (
-    <div className="pt-16 min-h-[100vh]">
+    <div className="md:pt-16 min-h-[100vh]">
     <div className="flex items-center gap-2  border-b-2 border-b-[#858585] max-w-[90%] mx-auto py-5  ">
       <Image
         src={arrow}
@@ -34,10 +34,10 @@ function Page() {
         }}
         onClick={() => router.back()}
       />
-      <p className="text-5xl uppercase font-bold"> my journey</p>
+      <p className="md:text-5xl uppercase font-bold"> my journey</p>
     </div>
 
-     <div>
+     <div className="pb-8 md:pb-0">
      <Crouselslider/>
      </div>
 

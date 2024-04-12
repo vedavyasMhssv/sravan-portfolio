@@ -66,7 +66,7 @@ function Footer() {
         </div>
       </div>
       <hr></hr>
-      <div className="flex justify-center text-[14px] py-3">
+      <div className="flex justify-center md:text-[14px] py-3 text-xs">
         <p>2024 SRAVAN KUMAR ANGADI - All rights reserved.</p>
       </div>
     </div>

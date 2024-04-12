@@ -34,7 +34,7 @@ function Page() {
       transition={{ duration: 2 }}
       className="pt-8 min-h-[100vh]"
     >
-      <div className="flex items-center gap-2  border-b-2 border-b-[#858585] max-w-[90%] mx-auto py-5  ">
+      <div className="flex items-center gap-2 p-2  border-b-2 border-b-[#858585] max-w-[90%] mx-auto md:py-5  ">
         <Image
           src={arrow}
           style={{
@@ -45,10 +45,10 @@ function Page() {
           }}
           onClick={() => router.back()}
         />
-        <p className="text-5xl uppercase font-bold"> my mission & vision</p>
+        <p className="md:text-5xl uppercase font-bold"> my mission & vision</p>
       </div>
 
-      <div className="flex justify-center items-start gap-4 h-[100vh] w-11/12 mt-12 mx-auto">
+      <div className="hidden md:flex  justify-center items-start gap-4 h-[100vh] w-11/12 mt-12 mx-auto">
         <motion.div
           onMouseOver={() => setHoveredIndex(1)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -94,10 +94,7 @@ function Page() {
               vision
             </motion.p>
           </div>
-          <Image
-            className="absolute bottom-[7.2rem] h-28 w-28 "
-            src={visioneye}
-          />
+          <Image className="absolute bottom-28 h-28 w-28 " src={visioneye} />
         </motion.div>
         <motion.div
           onMouseOver={() => setHoveredIndex(2)}
@@ -136,17 +133,40 @@ function Page() {
                 y: hoveredIndex === 2 ? 10 : -40,
                 color: hoveredIndex === 2 ? "white" : "black",
               }}
-              transition={{ duration: 0.8,  }}
+              transition={{ duration: 0.8 }}
               className="font-bold leading-7 text-2xl uppercase"
             >
               mission
             </motion.p>
           </div>
-          <Image
-            className="absolute bottom-[7.2rem] h-28 w-28  "
-            src={missiongoal}
-          />
+          <Image className="absolute bottom-28 h-28 w-28  " src={missiongoal} />
         </motion.div>
+      </div>
+      <div className="flex md:hidden flex-col  justify-center items-center gap-4 h-[70vh] w-11/12 mx-auto">
+        <div className="relative">
+          <Image src={vision} />
+          <div className="absolute top-16 left-4 text-white flex flex-col justify-center items-center gap-2  self-center">
+            <p className="text-xl font-semibold">VISION</p>
+            <p className="text-xs">
+              {" "}
+              {` To create a dynamic and informative digital solutions that  serves
+              as a hub of knowledge and inspiration for aspiring  entrepreneurs
+              looking to start, grow and scale their  businesses.`}
+            </p>
+
+            {/* <Image className="h-16 w-16" src={visioneye} /> */}
+          </div>
+        </div>
+        <div className="relative">
+          <Image src={mission} />
+          <div className="absolute top-12 left-4 text-white flex flex-col justify-center items-center gap-2  self-center">
+            <p className="text-xl font-semibold">MISSION</p>
+            <p className="text-xs">
+            {`My mission is to empower entrepreneurs with the  resources, tools and information they need to succeed in  their business ventures. Through our platform, we aim to  provide actionable insights, expert guidance, and valuable  resources to help entrepreneurs achieve their goals.`}
+            </p>
+
+          </div>
+        </div>
       </div>
     </motion.div>
   );

@@ -39,7 +39,7 @@ function Page() {
     };
   }, []);
   return (
-    <div className="pt-20 min-h-[100vh]">
+    <div className="md:pt-20 p-2 md:p-0 min-h-[100vh]">
       <div className="flex items-center border-b-2 border-b-[#858585] max-w-[800px] mx-auto py-5  ">
         <Image
           src={arrow}
@@ -51,7 +51,7 @@ function Page() {
           }}
           onClick={() => router.back()}
         />
-        <p className="text-5xl uppercase font-bold">What ispires me</p>
+        <p className="md:text-5xl uppercase font-bold">What ispires me</p>
       </div>
       <div className="mt-8 px-5 md:px-20 mx-auto">
         {inspiration.map((person, index) => {

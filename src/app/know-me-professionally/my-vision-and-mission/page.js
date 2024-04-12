@@ -52,7 +52,7 @@ function Page() {
         <motion.div
           onMouseOver={() => setHoveredIndex(1)}
           onMouseLeave={() => setHoveredIndex(null)}
-          className="border-2 border-black flex flex-col items-center"
+          className="relative border-2 border-black flex flex-col items-center"
         >
           <motion.div
             initial={{ opacity: 1 }}
@@ -94,12 +94,12 @@ function Page() {
               vision
             </motion.p>
           </div>
-          <Image className="absolute bottom-28 h-28 w-28 " src={visioneye} />
+          <Image className="absolute -bottom-14 h-28 w-28 " src={visioneye} />
         </motion.div>
         <motion.div
           onMouseOver={() => setHoveredIndex(2)}
           onMouseLeave={() => setHoveredIndex(null)}
-          className="border-2 border-black flex flex-col items-center"
+          className="relative border-2 border-black flex flex-col items-center"
         >
           <motion.div
             initial={{ opacity: 1 }}
@@ -139,7 +139,7 @@ function Page() {
               mission
             </motion.p>
           </div>
-          <Image className="absolute bottom-28 h-28 w-28  " src={missiongoal} />
+          <Image className="absolute -bottom-14 h-28 w-28  " src={missiongoal} />
         </motion.div>
       </div>
       <div className="flex md:hidden flex-col  justify-center items-center gap-4 h-[70vh] w-11/12 mx-auto">

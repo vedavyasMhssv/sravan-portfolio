@@ -74,7 +74,14 @@ function Page() {
     };
   }, []);
   return (
-    <div className="md:pt-16 min-h-[100vh]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{ duration: 2 }}
+      className="md:pt-16 min-h-[100vh]"
+    >
       <div className="flex items-center gap-2 md:pb-8 border-b-2 border-b-[#858585] max-w-[80%] mx-auto py-5  ">
         <Image
           src={arrow}
@@ -131,8 +138,8 @@ function Page() {
               {hobbies[current - 1]?.title}
             </motion.p>
             <motion.p
-              initial={{ opacity: 0 ,y:20}}
-              animate={{ opacity: 1 ,y:0}}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
               className="md:text-base font-medium text-justify text-xs"
@@ -142,7 +149,7 @@ function Page() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

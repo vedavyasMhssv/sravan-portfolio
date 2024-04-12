@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Navbar";
 
+
 export const metadata = {
   title: "Sravan Kumar Angadi - Innovator, Entrepreneur & Visionary Leader",
   description: "Discover the entrepreneurial journey of Sravan Kumar Angadi, the force behind Angadi World Technologies. Explore his ventures in technology and sustainability that are shaping the future. Learn about his mission to leverage innovation for global impact",

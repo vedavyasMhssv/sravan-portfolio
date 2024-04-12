@@ -53,7 +53,7 @@ const Nav = () => {
           Sravan Kumar Angadi
         </span>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4 uppercase " justify="end">
+      <NavbarContent className="hidden sm:flex gap-12 uppercase ml-12" justify="end">
         <NavbarItem>
           <Link
             id="Mystory"

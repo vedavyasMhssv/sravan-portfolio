@@ -61,7 +61,7 @@ function Page() {
         />
         <p className="md:text-5xl uppercase font-bold">What ispires me</p>
       </div>
-      <div className="mt-8 px-5 md:px-20 mx-auto">
+      <div className="mt-8  md:px-20 mx-auto">
         {inspiration.map((person, index) => {
           return (
             <div
@@ -69,7 +69,7 @@ function Page() {
                 index % 2 != 0 ? "flex-wrap-reverse" : "flex-wrap"
               } items-center p-5 ${
                 index % 2 != 0 ? "flex-row" : "flex-col"
-              } md:flex-row gap-24 w-[80%] mx-auto`}
+              } md:flex-row gap-24 md:w-[80%] mx-auto`}
             >
               {index % 2 == 0 && (
                 <div className="">
@@ -78,7 +78,7 @@ function Page() {
               )}
               <div className="flex-1">
                 <p className="uppercase font-bold text-3xl mb-4">{person.name}</p>
-                <p className="text-justify leading-7">{person.about}</p>
+                <p className="text-justify leading-7 text-pretty break-all">{person.about}</p>
               </div>
               {index % 2 != 0 && (
                 <div className="">

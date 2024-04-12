@@ -43,9 +43,9 @@ function Page() {
         />
         <p className="md:text-5xl uppercase font-bold"> HIIRING TALENTS</p>
       </div>
-      <div className="mt-12 flex flex-col md:flex-row justify-center items-start w-3/4 mx-auto gap-8 border-b-2 border-gray-700 pb-8">
+      <div className="mt-12 flex flex-col md:flex-row justify-center items-start md:w-3/4 w-[90%] mx-auto gap-8 border-b-2 border-gray-700 pb-8">
         <Image className="h-96 w-96" src={hiring} />
-        <p className="text-justify  leading-10 text-pretty ">{`At our company, we're on a mission to assemble the best team possible to ensure exceptional results for your projects. We believe that success is built upon the foundation of talent, dedication, and collaboration. That's why we're committed to handpicking individuals who not only excel in their respective fields but also embody our values of innovation, integrity, and excellence. We understand the importance of delivering top-notch solutions, and we're determined to achieve this by fostering a culture of teamwork, continuous learning, and forward-thinking. With our team by your side, you can trust that your projects will be met with unparalleled expertise and a relentless drive for success. Together, let's bring your vision to life and exceed your expectations.`}</p>
+        <p className="text-justify  md:leading-10 text-pretty ">{`At our company, we're on a mission to assemble the best team possible to ensure exceptional results for your projects. We believe that success is built upon the foundation of talent, dedication, and collaboration. That's why we're committed to handpicking individuals who not only excel in their respective fields but also embody our values of innovation, integrity, and excellence. We understand the importance of delivering top-notch solutions, and we're determined to achieve this by fostering a culture of teamwork, continuous learning, and forward-thinking. With our team by your side, you can trust that your projects will be met with unparalleled expertise and a relentless drive for success. Together, let's bring your vision to life and exceed your expectations.`}</p>
       </div>
       <p className="text-center text-xs md:text-base px-2  text-gray-500 uppercase mt-4 font-medium">CURRENTLY THERE ARE NO OPENINGS IN OUR COMPANY</p>
     </motion.div>

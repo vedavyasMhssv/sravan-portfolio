@@ -15,10 +15,12 @@ import image3 from "../images/Crouselimage/3.png";
 import image4 from "../images/Crouselimage/4.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { usePathname } from 'next/navigation'
 
 export function Crouselslider() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
+  const pathname = usePathname()
+console.log(pathname)
   const Data = [
     {
       image: image1,
@@ -71,7 +73,7 @@ export function Crouselslider() {
   ];
 
   return (
-    <div className="w-full h-auto py-32 gap-8 flex md:flex-row flex-col justify-between items-center px-2">
+    <div className="w-full h-auto py-8 gap-8 flex md:flex-row flex-col justify-between items-center px-2">
       <div className="flex flex-col justify-start items-start gap-2 md:pl-20 pl-16 ">
         <p className="uppercase text-xs text-gray-400">
           Journey throughout the years of my life.
@@ -154,8 +156,8 @@ export function Crouselslider() {
             ))}
           </CarouselContent>
           <div className="absolute md:-left-[23rem] md:bottom-20 -bottom-8 left-16 bg-red-600">
-            <CarouselPrevious className="bg-[rgb(0,0,0,0.6)]" />
-            <CarouselNext className="bg-[rgb(0,0,0,0.6)]" />
+            <CarouselPrevious className={pathname==='/know-me-professionally/my-journey'?"bg-[#FF7143] text-white":"bg-[rgb(0,0,0,0.6)]"} />
+            <CarouselNext className={pathname==='/know-me-professionally/my-journey'?"bg-[#FF7143] text-white":"bg-[rgb(0,0,0,0.6)]"} />
           </div>
         </Carousel>
       </div>

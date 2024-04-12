@@ -1,7 +1,48 @@
-import React from "react";
+"use client";
+import React,{ useLayoutEffect } from "react";
+import Image from "next/image";
+import arrow from "@/images/common/Arrow.png";
+import { useRouter } from "next/navigation";
+import Crouselslider from "@/components/Crouselslider";
 
 function Page() {
-  return <div></div>;
+  const router = useRouter();
+
+  
+
+  useLayoutEffect(() => {
+    const body = document.getElementsByTagName("body");
+    body[0].style.backgroundColor = "white";
+    body[0].style.color = "black";
+
+    return () => {
+      body[0].style.backgroundColor = "black";
+      body[0].style.color = "white";
+    };
+  }, []);
+
+  return (
+    <div className="pt-16 min-h-[100vh]">
+    <div className="flex items-center gap-2  border-b-2 border-b-[#858585] max-w-[90%] mx-auto py-5  ">
+      <Image
+        src={arrow}
+        style={{
+          rotate: "-90deg",
+          width: "40px",
+          marginRight: "30px",
+          cursor: "pointer",
+        }}
+        onClick={() => router.back()}
+      />
+      <p className="text-5xl uppercase font-bold"> my journey</p>
+    </div>
+
+     <div>
+     <Crouselslider/>
+     </div>
+
+    </div>
+  )
 }
 
 export default Page;

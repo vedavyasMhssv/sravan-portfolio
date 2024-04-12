@@ -44,7 +44,7 @@ const Nav = () => {
     <>
     <Navbar
       maxWidth="2xl"
-      className="w-[98%] mx-auto  backdrop-blur-md  bg-[rgb(0,0,0,0.2)]   border  border-white  h-14 rounded-full"
+      className="w-[98%] mx-auto  backdrop-blur-md  bg-black   border  border-white  h-14 rounded-full"
       shouldHideOnScroll
     >
       <NavbarBrand className="flex items-center justify-start ">
@@ -53,11 +53,11 @@ const Nav = () => {
           Sravan Kumar Angadi
         </span>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="end">
+      <NavbarContent className="hidden sm:flex gap-4 uppercase " justify="end">
         <NavbarItem>
           <Link
             id="Mystory"
-            className="text-sm font-bold leading-7 tracking-wider text-white "
+            className="text-sm font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700 "
             color="foreground"
             href="#"
           >
@@ -67,26 +67,26 @@ const Nav = () => {
         <NavbarItem>
           <Link
           id="Service"
-            className="text-sm font-bold leading-7 tracking-wider text-white"
+            className="text-sm font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700"
             href="#"
             aria-current="page"
           >
             Service
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        {/* <NavbarItem>
           <Link
           id="Works"
-            className="text-sm font-bold leading-7 tracking-wider text-white"
+            className="text-sm font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700"
             href="#"
           >
             Works
           </Link>
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarItem>
           <Link
           id="Social"
-            className="text-sm font-bold leading-7 tracking-wider text-white"
+            className="text-sm font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700"
             href="#"
           >
             Social

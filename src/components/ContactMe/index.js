@@ -176,7 +176,7 @@ function ContactMe() {
             type="text"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
-            placeholder="Subject"
+            placeholder="SUBJECT"
             className="placeholder:text-black placeholder:font-bold border-b py-8 border-b-[black] placeholder:text-[14px] flex-1 w-full  focus-visible:outline-none"
           />
 

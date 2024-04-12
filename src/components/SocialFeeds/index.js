@@ -134,7 +134,7 @@ function SocialFeeds() {
               return (
                 <div
                   key={index}
-                  className="px-2 py-4 w-auto border border-black max-h-fit rounded-lg flex flex-col justify-center items-center mx-auto text-black"
+                  className="px-2 py-4 w-auto border border-black max-h-fit rounded-lg flex flex-col overflow-hidden self-center text-black"
                   style={{
                     minHeight: "fit-content",
                     boxShadow: "5px 6px 0px 0px #000000B0",

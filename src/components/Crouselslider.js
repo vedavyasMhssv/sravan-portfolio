@@ -73,7 +73,7 @@ console.log(pathname)
   ];
 
   return (
-    <div className="w-full h-auto py-8 gap-8 flex md:flex-row flex-col justify-between items-center px-2">
+    <div className="w-full  h-auto py-8 gap-8 flex md:flex-row flex-col justify-between items-center px-2">
       <div className="flex flex-col justify-start items-start gap-2 md:pl-20 pl-16 ">
         <p className="uppercase text-xs text-gray-400">
           Journey throughout the years of my life.

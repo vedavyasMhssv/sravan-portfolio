@@ -73,8 +73,8 @@ function Page() {
     };
   }, []);
   return (
-    <div className="pt-16 min-h-[100vh]">
-      <div className="flex items-center pb-8 border-b-2 border-b-[#858585] max-w-[800px] mx-auto py-5  ">
+    <div className="md:pt-16 p-2 md:p-0  min-h-[100vh]">
+      <div className="flex items-center md:pb-8 border-b-2 border-b-[#858585] max-w-[800px] mx-auto py-5  ">
         <Image
           src={arrow}
           style={{
@@ -85,7 +85,7 @@ function Page() {
           }}
           onClick={() => router.back()}
         />
-        <p className="text-5xl uppercase font-bold">QUOTES I FOUND</p>
+        <p className="md:text-5xl uppercase font-bold">QUOTES I FOUND</p>
       </div>
       <div className="mt-20   w-full flex justify-center items-center mx-auto">
       <Carousel
@@ -99,17 +99,17 @@ function Page() {
           orientation="vertical"
           className="w-full flex justify-center items-center text-center"
         >
-          <CarouselContent className="-mt-1 h-[400px] w-full mx-auto">
+          <CarouselContent className="-mt-1 md:h-[400px] h-96 w-full mx-auto">
             {quotes.map((value, index) => (
               <CarouselItem key={index} className="pt-1 md:basis-1/1 w-11/12 mx-auto">
               <div className="flex flex-col mb-20 w-full">
               <p
-                className="text-5xl font-normal leading-relaxed text-center"
+                className="md:text-5xl text-2xl font-normal leading-relaxed text-center"
                 style={{ fontFamily: "Pacifico" }}
               >
                 {value.quote}
               </p>
-              <p className="text-center font-bold mt-5 text-3xl tracking-widest">
+              <p className="text-center font-bold mt-5 md:text-3xl tracking-widest">
                 - {value.author}
               </p>
             </div>

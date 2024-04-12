@@ -136,17 +136,17 @@ function OurServices() {
           opts={{
             align: "start",
           }}
-          className="w-3/4 "
+          className="md:w-3/4 w-full"
         >
           <h6 className="font-bold uppercase text-white text-sm leading-7 py-4">
             angadi world technology
           </h6>
           <CarouselContent>
             {data.map((value, index) => (
-              <CarouselItem key={index} className=" md:basis-1/2 lg:basis-1/4">
+              <CarouselItem key={index} className=" md:basis-1/3 lg:basis-1/4">
                 <div className="p-1">
                   <Card className="rounded-none bg-[#FFFFFF1A] border-none">
-                    <CardContent className="flex flex-col items-start justify-center aspect-square w-full p-3 gap-4">
+                    <CardContent className="flex flex-col items-start justify-center aspect-square w-full p-3 gap-8 md:gap-4">
                       <Image className="h-12 w-12" src={value.icon} />
                       <h6 className="text-white uppercase font-semibold text-sm">
                         {value.title}
@@ -170,12 +170,12 @@ function OurServices() {
           </div>
         </Carousel>
       </div>
-      <div className="flex justify-start items-center  gap-4 flex-col w-full mx-auto  ">
+      <div className="flex justify-start items-center  gap-4 flex-col w-full mx-auto pb-8 ">
         <Carousel
           opts={{
             align: "start",
           }}
-          className="w-3/4 "
+          className="md:w-3/4 w-full"
         >
           <h6 className="font-bold uppercase text-white text-sm leading-7 py-4">
             ibets

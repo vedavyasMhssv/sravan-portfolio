@@ -34,6 +34,7 @@ export default function RootLayout({ children }) {
       <body >
       <div id="smooth-wrapper">
         <div id="smooth-content"  >
+        
         {children}
 
         </div>

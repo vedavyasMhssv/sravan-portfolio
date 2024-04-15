@@ -27,19 +27,32 @@ function SocialFeeds() {
   const [instagramData, setInstagramData] = useState();
   const [feed, setFeed] = useState();
   const [error, setError] = useState(null);
-
-  const datainone = [feed, instagramData];
+  const [mergedData, setMergedData] = useState([]);
+  const [numPosts, setNumPosts] = useState(10); 
 
   const fetchData = async () => {
-    const token = `IGQWRPa2RrM3hDUzNGNGVHSVZArNDRaVEQ4bzAxVjdkdVd4VWYxdTBxcnR1RTJUZAkt0aDVzUlZALa1U4VTNCMTBFVEtMR0JnSF9LQjdmcVg1MEphSzdJZAFdCcHhzYy1MRHczUXNuUlZA3WGgyXzNDTnBEdklwSHo0TmMZD`;
+    const instagramToken = `IGQWRNUlFYak5UZAkZAqRzRtSHZAUZATBBS01QbWUxczdhTjhHUkRFQWsyVFIySG5kOWZALdGhzemZA5SWZA3REtuaEgxRXdWQXBoUTlCV1R5bjgxaFZAMMThELUFBNXc4MnNvYU5zVWlYTUtlSVljcUgzZAmhzcFJZAWGZAqMEUZD`;
+    const facebookToken = `EAArV3Lx19gABO3tc9WZBaHrwcodA6ysK4qaCRruFuX4fAO0zZBCeZBTS2mMZAgKVRhAd6kAuJwYeTQ1ZBBEZBXEm0QmAF55fmdls9OK4cUv5leUknF6PHMZAucpXKj7GJdro0NyZAUVLKLqMroQj8na3cnH6cfuUqgvlTxB3Ezy3jYfeQomrNUdHg37TiREozZBZBWWQKGManY`;
+
     try {
-      const response = await axios.get(
-        `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink,username&access_token=${token}`
+      const instagramResponse = await axios.get(
+        `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink,username&access_token=${instagramToken}`
       );
-      if (response.status !== 200) {
+
+      const facebookResponse = await axios.get(
+        `https://graph.facebook.com/v12.0/me/feed?fields=id,message,created_time,full_picture,permalink_url&access_token=${facebookToken}`
+      );
+
+      if (instagramResponse.status !== 200 || facebookResponse.status !== 200) {
         throw new Error("Failed to fetch data");
       }
-      setInstagramData(response.data);
+
+      const merged = [
+        ...instagramResponse.data.data,
+        ...facebookResponse.data.data,
+      ];
+      const shuffled = merged.sort(() => Math.random() - 0.5);
+      setMergedData(shuffled);
     } catch (error) {
       console.log(error);
       setError(error.message);
@@ -50,29 +63,22 @@ function SocialFeeds() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const accessToken =
-      "EAASC9UYZB6a8BO5XtRQJz55FH52SZC9OwEtQZBZBFvKmQZClkLvBhEcDkTuEcBVxwfaGFvBe6mZAKdNxJnGjZAUd7TPHhZBlrGx6VDW38RzbMN8x54ZCH4Oh9vTdCmkFbj8cLjfatUVc0fFvURaFfuYtGQPIppB8fEK7s6tGS0PpP9pDVRpscPr8uJnK4";
-    const fields = "id,message,created_time,full_picture,permalink_url";
-    const apiUrl = `https://graph.facebook.com/v12.0/me/feed?fields=${fields}&access_token=${accessToken}`;
+  
+  
 
-    axios
-      .get(apiUrl)
-      .then((response) => {
-        setFeed(response.data.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
-  console.log(feed, `here`);
 
   const media = [
     { name: "AWT", id: 1 },
     { name: "QR ANGADI", id: 2 },
-    // { name: "IBETS", id: 3 },
   ];
+
+
+
+  const handleRefresh = () => {
+    const newNumPosts = Math.min(mergedData.length, numPosts + 10); // Increase by 10 or less if fewer posts available
+    setNumPosts(newNumPosts);
+  };
+
   return (
     <div className="bg-white py-10">
       {" "}
@@ -130,50 +136,25 @@ function SocialFeeds() {
       <div className="w-11/12 mx-auto mt-10 px-10">
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 500: 2, 800: 3 }}>
           <Masonry gutter="10px">
-            {instagramData?.data?.map((value, index) => {
+            {mergedData.slice(0, numPosts).map((value, index) => {
               return (
                 <div
                   key={index}
-                  className="px-2 py-4 w-auto border border-black max-h-fit rounded-lg flex flex-col overflow-hidden self-center text-black"
+                  className="px-2 py-4 w-auto border border-black max-h-fit rounded-lg flex flex-col overflow-hidden  text-black"
                   style={{
                     minHeight: "fit-content",
                     boxShadow: "5px 6px 0px 0px #000000B0",
                   }}
                 >
-                  {/* <div className="flex items-center">
-                    <Image
-                      src={feed.image}
-                      height={50}
-                      width={50}
-                      className="rounded-[50%]"
-                    />
-                    <div className="ms-[5px] flex flex-col text-[12px]">
-                      {feed.name && (
-                        <span className="font-semibold">{feed.name}</span>
-                      )}
-                      {feed.userName && <span>{feed.userName}</span>}
-                    </div>
-                    <Image
-                      src={feed.socialImg}
-                      height={30}
-                      width={30}
-                      className="ms-auto"
-                    />
-                  </div> */}
-                  {/* {feed.text && <p className="text-[14px]">{feed.text}</p>} */}
-                  <InstagramEmbed url={value.permalink} width={350} />
-
-                  {/* <Image
-                    src={feed.cover}
-                    height={50}
-                    width={50}
-                    className="w-[100%] h-auto mt-2"
-                    unoptimized
-                  /> */}
+                  {value?.permalink ? (
+                    <InstagramEmbed url={value?.permalink} width={350} />
+                  ) : (
+                    <FacebookEmbed url={value?.permalink_url} width={350} />
+                  )}
                 </div>
               );
             })}
-            <div className="font-[Pacifico] text-[#b3b3b3;] text-6xl flex justify-center items-center hover:text-[black] p-3">
+            <div onClick={handleRefresh} className="font-[Pacifico] text-[#b3b3b3;] text-6xl flex justify-center items-center hover:text-[black] p-3">
               Refresh
             </div>
           </Masonry>

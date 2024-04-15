@@ -10,7 +10,7 @@ function MyStory() {
   return (
     <div className="flex flex-col">
       {" "}
-      <div className="flex py-12 mb-8 gap-12  justify-center text-right">
+      <div className="flex py-12 mt-4 mb-8 gap-12  justify-center text-right">
         <motion.div
           // reveals content from left to right
           initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}

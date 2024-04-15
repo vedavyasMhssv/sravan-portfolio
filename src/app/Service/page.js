@@ -14,7 +14,17 @@ const page = () => {
       <div className=" w-full fixed z-10 p-1">
         <Nav />
       </div>
+      <div
+          style={{
+            minHeight: "100vh",
+            position: "relative",
+            maxWidth: "100vw",
+            overflow: "hidden",
+          }}
+        >
+
       <OurServices />
+        </div>
     </motion.div>
   );
 };

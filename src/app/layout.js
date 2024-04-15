@@ -3,10 +3,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Navbar";
 
-
 export const metadata = {
   title: "Sravan Kumar Angadi - Innovator, Entrepreneur & Visionary Leader",
-  description: "Discover the entrepreneurial journey of Sravan Kumar Angadi, the force behind Angadi World Technologies. Explore his ventures in technology and sustainability that are shaping the future. Learn about his mission to leverage innovation for global impact",
+  description:
+    "Discover the entrepreneurial journey of Sravan Kumar Angadi, the force behind Angadi World Technologies. Explore his ventures in technology and sustainability that are shaping the future. Learn about his mission to leverage innovation for global impact",
 };
 
 export default function RootLayout({ children }) {
@@ -31,15 +31,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body >
-      <div id="smooth-wrapper">
-        <div id="smooth-content"  >
-        
-        {children}
-
+      <body>
+        <div id="smooth-wrapper">
+          <div id="smooth-content">{children}</div>
         </div>
-
-      </div>
       </body>
     </html>
   );

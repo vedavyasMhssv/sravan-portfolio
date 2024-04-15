@@ -10,12 +10,22 @@ const page = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 2 }}
-      className="w-full"
+      className=""
     >
-      <div className=" w-full fixed z-10 p-1">
+      <div className="flex justify-center items-center mx-auto  fixed z-10 p-1 w-full">
         <Nav />
       </div>
+      <div
+          style={{
+            minHeight: "200vh",
+            position: "relative",
+            maxWidth: "100vw",
+            overflow: "hidden",
+          }}
+        >
+
       <MyStory />
+        </div>
     </motion.div>
   );
 };

@@ -15,37 +15,27 @@ import Image from "next/image";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import styles from "./Header/index.module.css";
-import Backdrop from "./Backdrop";
-import { Squash as Hamburger } from "hamburger-react";
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetFooter
 } from "@/components/ui/sheet";
 import { IoMdMenu } from "react-icons/io";
+import { useRouter,usePathname   } from 'next/navigation'
 
 const Nav = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const router = useRouter()
+  const pathname = usePathname()
 
-  const handleScroll = () => {
-    const position = window.scrollY;
-    setScrollPosition(position);
-  };
 
-  // Add scroll event listener when component mounts
-  React.useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    // Remove event listener when component unmounts
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []); // Empty dependency array means this effect runs only once after the initial render
+  const active=`bg-white text-black w-full border rounded-full items-center justify-center flex text-center gap-4`
+  const unactive=`w-full border rounded-full items-center justify-center flex text-center gap-4`
 
+ 
   return (
     <>
       <Navbar
@@ -135,12 +125,22 @@ const Nav = () => {
                       </span>
                     </SheetTitle>
                   </SheetHeader>
-                  <div className="py-4">
+                  <div className="py-4 border-none">
+                    <div className=" flex justify-center  items-center gap-2 px-4 border-none">
+                      <SheetClose onClick={()=>router.push('/')} className="w-full py-2">
+                      <div
+                        className={pathname==='/'?active:unactive}
+                      >
+                        <p className="text-center self-center">Home</p>
+                      </div>
+
+                      </SheetClose>
+                    </div>
                     <div className=" flex justify-center items-center gap-2 px-4">
-                      <SheetClose onClick={()=>setScrollPosition(200)} className="w-full py-2">
+                      <SheetClose onClick={()=>router.push('/Mystory')} className="w-full py-2">
                       <div
                         id="Mystory"
-                        className="w-full border rounded-full items-center justify-center flex text-center gap-4"
+                        className={pathname==='/Mystory'?active:unactive}
                       >
                         <p className="text-center self-center">My story</p>
                       </div>
@@ -148,10 +148,10 @@ const Nav = () => {
                       </SheetClose>
                     </div>
                     <div className=" flex justify-center items-center gap-2 px-4">
-                    <SheetClose  className="w-full py-2">
+                    <SheetClose onClick={()=>router.push('/Service')}  className="w-full py-2">
                       <div
                         id="Service"
-                        className="w-full border rounded-full items-center justify-center flex text-center gap-4"
+                        className={pathname==='/Service'?active:unactive}
                       >
                         <p className="text-center self-center">Service</p>
                       </div>
@@ -159,10 +159,10 @@ const Nav = () => {
                       </SheetClose>
                     </div>
                     <div className=" flex justify-center items-center gap-2 px-4">
-                    <SheetClose className="w-full py-2">
+                    <SheetClose  onClick={()=>router.push('/Social')}  className="w-full py-2">
                       <div
                         id="Social"
-                        className="w-full border rounded-full items-center justify-center flex text-center gap-4"
+                        className={pathname==='/Social'?active:unactive}
                       >
                         <p className="text-center self-center">Social</p>
                       </div>
@@ -170,6 +170,8 @@ const Nav = () => {
                       </SheetClose>
                     </div>
                   </div>
+
+                 
                 </SheetContent>
               </Sheet>
             </div>

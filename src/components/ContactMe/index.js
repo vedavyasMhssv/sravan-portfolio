@@ -22,7 +22,6 @@ function ContactMe() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
 
   const YOUR_SERVICE_ID = "service_222112i";
@@ -34,7 +33,7 @@ function ContactMe() {
     setLoading(true);
     e.preventDefault();
 
-    if (!name && !email && !subject && !message && !phone && !lastname) {
+    if (!name || !lastname || !email || !subject || !message) {
       toast.error("Please fill the field details!", {
         style: {
           border: "1px solid white",
@@ -55,7 +54,6 @@ function ContactMe() {
       reply_to: email,
       subject: subject,
       message: message,
-      phone_no: phone,
     };
 
     emailjs
@@ -92,6 +90,7 @@ function ContactMe() {
               secondary: "#FFFAEE",
             },
           });
+          setLoading(true);
         }
       
         
@@ -102,7 +101,6 @@ function ContactMe() {
     setEmail("");
     setSubject("");
     setMessage("");
-    setPhone("");
     setlastName("");
   };
 
@@ -166,6 +164,7 @@ function ContactMe() {
           </div>
 
           <input
+          id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -173,6 +172,7 @@ function ContactMe() {
             className="placeholder:text-black pb-4 placeholder:font-bold border-b border-b-[black] placeholder:text-[14px] flex-1 w-full  focus-visible:outline-none"
           />
           <input
+          id="subject"
             type="text"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
@@ -192,7 +192,7 @@ function ContactMe() {
             </option>
           </select> */}
           <textarea
-            type=""
+            type="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="MESSAGE"
@@ -205,7 +205,7 @@ function ContactMe() {
             {loading ? <Spinner color="white" /> : "contact me"}
           </button>
         </form>
-        <div className="flex-[0.3]  h-96 gap-8 bg-black p-8 text-white rounded-bl-[30px] rounded-tr-[30px]  flex-col hidden md:flex relative">
+        <div className="flex-[0.3]  h-auto gap-8 bg-black p-8 text-white rounded-bl-[30px] rounded-tr-[30px]  flex-col hidden md:flex relative">
           <p className="uppercase my-2 font-bold">Contact me :</p>
           <hr></hr>
           <div>
@@ -223,7 +223,7 @@ function ContactMe() {
             <FaLocationDot className="text-white mt-[5px]" />
             <p>sample address 21A Hyderabad India</p>
           </div>
-          <div className="text-xl  flex gap-2 relative max-w-fit ml-auto bottom-[-15px] right-[-20px]">
+          <div className="text-xl text-white cursor-pointer flex gap-2 relative max-w-fit ml-auto bottom-[-15px] right-[-20px]">
             <AiFillInstagram />
             <FaFacebookSquare />
             <IoLogoLinkedin />

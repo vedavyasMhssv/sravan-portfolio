@@ -7,6 +7,8 @@ import logo1 from "../images/Crouselimage/logo1.png";
 import logo2 from "../images/Crouselimage/logo2.png";
 import logo3 from "../images/Crouselimage/logo3.png";
 import Image from "next/image";
+import Link from "next/link";
+
 
 const Navigatebutton = () => {
   const [showLogos, setShowLogos] = useState(false);
@@ -43,7 +45,10 @@ const Navigatebutton = () => {
         exit={{ x: 30, scale: 0, opacity: 0 }}
         transition={{ duration: 0.6 }}
       >
+      <Link href={'https://www.qrangadi.com/'}>
         <Image className="md:w-24 md:h-24 h-12 w-12 hover:ring-1 hover:ring-[#FF7143] rounded-full" src={logo3} />
+
+      </Link>
       </motion.div>
     </div>
     <div className="  md:hidden ">
@@ -70,7 +75,10 @@ const Navigatebutton = () => {
         exit={{ y: 30, scale: 0, opacity: 0 }}
         transition={{ duration: 0.6 }}
       >
+      <Link href={'https://www.qrangadi.com'}>
+
         <Image className="md:w-24 md:h-24 h-12 w-12 hover:ring-1 hover:ring-[#FF7143] rounded-full" src={logo3} />
+      </Link>
       </motion.div>
     </div>
       <div className="flex justify-center items-center">

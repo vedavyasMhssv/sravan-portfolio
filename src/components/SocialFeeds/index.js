@@ -138,9 +138,23 @@ function SocialFeeds() {
           <Masonry gutter="10px">
             {mergedData.slice(0, numPosts).map((value, index) => {
               return (
+                <>
                 <div
                   key={index}
-                  className="px-2 py-4 md:mx-auto  items-center md:items-start w-auto border border-black max-h-fit rounded-lg flex flex-col overflow-hidden  text-black"
+                  className="px-2 py-4  self-center flex md:hidden   max-h-fit rounded-lg  flex-col overflow-hidden  text-black"
+                  style={{
+                    minHeight: "fit-content",
+                  }}
+                >
+                  {value?.permalink ? (
+                    <InstagramEmbed url={value?.permalink} width={350} />
+                  ) : (
+                    <FacebookEmbed url={value?.permalink_url} width={350} />
+                  )}
+                </div>
+                <div
+                  key={index}
+                  className="px-2 py-4 mx-auto hidden md:flex w-auto border border-black max-h-fit rounded-lg  flex-col overflow-hidden  text-black"
                   style={{
                     minHeight: "fit-content",
                     boxShadow: "5px 6px 0px 0px #000000B0",
@@ -152,6 +166,8 @@ function SocialFeeds() {
                     <FacebookEmbed url={value?.permalink_url} width={350} />
                   )}
                 </div>
+
+                </>
               );
             })}
             <div onClick={handleRefresh} className="font-[Pacifico] text-[#b3b3b3;] text-6xl flex justify-center items-center hover:text-[black] p-3">

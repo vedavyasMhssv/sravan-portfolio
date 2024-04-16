@@ -11,21 +11,22 @@ const Text = ({ text, classes }) => {
 };
 function Experience() {
   return (
-    <div className="flex w-full my-32 experience">
+    <div className="flex w-full md:my-32 py-12 md:py-12 experience">
       <div
+      className="border-2 border-dashed h-[24rem] w-[24rem] md:h-[28rem] md:w-[28rem] border-[#ffffff30] rounded-[50%] flex justify-center items-center relative"
         style={{
-          minHeight: "300px",
-          minWidth: "300px",
-          border: "2px dashed #ffffff30",
-          borderRadius: "50%",
+          // minHeight: "400px",
+          // minWidth: "400px",
+          // border: "2px dashed #ffffff30",
+          // borderRadius: "50%",
           marginInline: "auto",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
+          // display: "flex",
+          // justifyContent: "center",
+          // alignItems: "center",
+          // position: "relative",
         }}
       >
-        <p className="absolute text-[22px] min-w-[500px] flex justify-center items-center font-semibold">
+        <p className="absolute md:text-3xl text-xl w-[30rem]  md:min-w-[700px] flex justify-center items-center font-semibold">
           10 + Years of
           <span className="text-[--color-theme]">
             &nbsp;Entrepreneurial Experience.
@@ -33,9 +34,10 @@ function Experience() {
         </p>
         <div
           id="orbitOne"
+          className="md:h-[28rem] md:w-[28rem] h-96 w-96"
           style={{
-            minHeight: "300px",
-            minWidth: "300px",
+            // minHeight: "450px",
+            // minWidth: "450px",
             // border: "2px dashed #ffffff30",
             borderRadius: "50%",
             marginInline: "auto",
@@ -103,25 +105,25 @@ function Experience() {
         </div>
         <Text
           text={"Business Digitalization"}
-          classes={"top-[0px] left-[-20px]"}
+          classes={"top-[0px] left-[-20px] text-sm"}
         />
-        <Text text={"Brand Mastery"} classes={"top-[20px] right-[-30px]"} />
-        <Text text={"Tech Consulting"} classes={"top-[80px] left-[-110px]"} />
-        <Text text={"Product Branding"} classes={"top-[70px] left-[50px]"} />
-        <Text text={"Value Creation"} classes={"top-[80px] right-[-50px]"} />
-        <Text text={"Team Building"} classes={"bottom-[80px] left-[-70px]"} />
+        <Text text={"Brand Mastery"} classes={"top-[20px] right-[-10px] text-sm"} />
+        <Text text={"Tech Consulting"} classes={"top-[100px] md:left-[-110px] left-[-60px] text-sm"} />
+        <Text text={"Product Branding"} classes={"top-[140px] left-[60px] text-sm"} />
+        <Text text={"Value Creation"} classes={"top-[100px] right-[-50px] text-sm"} />
+        <Text text={"Team Building"} classes={"bottom-[100px] left-[-70px] text-sm"} />
         <Text
           text={"Product Design"}
-          classes={"bottom-[80px] right-[-100px]"}
+          classes={"bottom-[100px] md:right-[-100px] right-[-50px] text-sm"}
         />
-        <Text text={"Growth Strategy"} classes={"bottom-[40px] right-[0px]"} />
+        <Text text={"Growth Strategy"} classes={"bottom-[40px] right-[0px] text-sm"} />
         <Text
           text={"Cross-Collaboration"}
-          classes={"bottom-[20px] left-[-40px]"}
+          classes={"bottom-[20px] left-[-40px] text-sm"}
         />
         <Text
           text={"Innovation Drive"}
-          classes={"bottom-[-20px] left-[150px]"}
+          classes={"bottom-[-20px] left-[150px] text-sm"}
         />
       </div>
     </div>

@@ -73,23 +73,23 @@ console.log(pathname)
   ];
 
   return (
-    <div className="w-full  h-auto py-8 gap-8 flex md:flex-row flex-col justify-between items-center px-2">
-      <div className="flex flex-col justify-start items-start gap-2 md:pl-20 pl-16 ">
-        <p className="uppercase text-xs text-gray-400">
+    <div className="w-full  h-auto py-8 gap-8 flex  flex-col justify-between items-center px-2">
+      <div className="flex flex-col justify-start items-center gap-2 ">
+        <p className="uppercase text-xs text-gray-400 text-center">
           Journey throughout the years of my life.
         </p>
-        <h6 className="md:text-4xl text-3xl font-bold uppercase w-96">
+        <h6 className="md:text-4xl text-3xl font-bold uppercase text-center ">
           Voyage<br></br> through the{" "}
           <span className="text-[#FF7143]">chapters</span> of my existence.
         </h6>
       </div>
       <div>
-        <Carousel className="w-full  ">
-          <CarouselContent className="ml-1">
+        <Carousel className="w-11/12 mx-auto  ">
+          <CarouselContent className="">
             {Data.map((value, index) => (
               <CarouselItem
                 key={index}
-                className="basis-1/2 md:basis-1/3 lg:basis-1/3"
+                className=" md:basis-1/3 lg:basis-1/3"
               >
                 <div className="">
                   <Card className="w-auto h-auto rounded-none">
@@ -126,7 +126,7 @@ console.log(pathname)
                           {value.title}
                         </motion.p>
                         <motion.p
-                          className="text-white text-xs md:w-52 w-32"
+                          className="text-white text-xs md:text-sm md:w-80 w-32"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{
                             opacity: hoveredIndex === index ? 1 : 0,
@@ -155,9 +155,9 @@ console.log(pathname)
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="absolute md:-left-[23rem] md:bottom-20 -bottom-8 left-16 bg-red-600">
-            <CarouselPrevious className={pathname==='/know-me-professionally/my-journey'?"bg-[#FF7143] text-white":"bg-[rgb(0,0,0,0.6)]"} />
-            <CarouselNext className={pathname==='/know-me-professionally/my-journey'?"bg-[#FF7143] text-white":"bg-[rgb(0,0,0,0.6)]"} />
+          <div className="absolute md:static -bottom-12 left-40 ">
+            <CarouselPrevious className={pathname==='/know-me-professionally/my-journey'?"bg-[#FF7143] text-white":"bg-[#FF7143] text-white"} />
+            <CarouselNext className={pathname==='/know-me-professionally/my-journey'?"bg-[#FF7143] text-white":"bg-[#FF7143] text-white"} />
           </div>
         </Carousel>
       </div>

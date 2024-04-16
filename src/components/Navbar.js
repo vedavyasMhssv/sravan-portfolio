@@ -48,7 +48,7 @@ const Nav = () => {
             className="rounded-full h-20 w-20 object-contain absolute left-0 "
             src={Logo}
           />
-          <span className=" font-[Pacifico] md:text-[24px] text-lg font-normal leading-[40px] tracking-wide ml-10">
+          <span className=" font-[Pacifico] md:text-[24px] text-lg font-normal leading-[40px] tracking-wide ml-10 capitalize">
             Sravan Kumar Angadi
           </span>
         </NavbarBrand>

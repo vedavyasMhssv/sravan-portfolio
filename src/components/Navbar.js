@@ -11,6 +11,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import Logo from "../images/Crouselimage/LOGO.png";
+import name from "../images/Crouselimage/name.png";
 import Image from "next/image";
 import { createPortal } from "react-dom";
 import Link from "next/link";
@@ -48,9 +49,10 @@ const Nav = () => {
             className="rounded-full h-20 w-20 object-contain absolute left-0 "
             src={Logo}
           />
-          <span className=" font-[Pacifico] md:text-[24px] text-lg font-normal leading-[40px] tracking-wide ml-10 capitalize">
+          <Image className="ml-10 md:h-12 h-16 w-auto object-contain "  src={name}/>
+          {/* <span className=" font-[Pacifico] md:text-[24px] text-lg font-normal leading-[40px] tracking-wide ml-10 capitalize">
             Sravan Kumar Angadi
-          </span>
+          </span> */}
         </NavbarBrand>
         <NavbarContent
           className="hidden sm:flex gap-12 uppercase ml-12"
@@ -120,9 +122,11 @@ const Nav = () => {
                 <SheetContent className="bg-transparent backdrop-blur-sm border-none">
                   <SheetHeader>
                     <SheetTitle>
-                      <span className="text-white font-[Pacifico] md:text-[24px] text-lg font-normal leading-[40px] tracking-wide ">
+                    <Image className=" md:h-12 h-16  object-contain "  src={name}/>
+
+                      {/* <span className="text-white font-[Pacifico] md:text-[24px] text-lg font-normal leading-[40px] tracking-wide ">
                         Sravan Kumar Angadi
-                      </span>
+                      </span> */}
                     </SheetTitle>
                   </SheetHeader>
                   <div className="py-4 border-none">

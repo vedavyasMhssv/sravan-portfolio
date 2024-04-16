@@ -15,12 +15,12 @@ import image3 from "../images/Crouselimage/3.png";
 import image4 from "../images/Crouselimage/4.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 
 export function Crouselslider() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const pathname = usePathname()
-console.log(pathname)
+  const pathname = usePathname();
+  console.log(pathname);
   const Data = [
     {
       image: image1,
@@ -74,7 +74,7 @@ console.log(pathname)
 
   return (
     <div className="w-full  h-auto py-8 gap-8 flex  flex-col justify-between items-center px-2">
-      <div className="flex flex-col justify-start items-center gap-2 ">
+      <div className="flex flex-col justify-start items-center gap-2 py-8">
         <p className="uppercase text-xs text-gray-400 text-center">
           Journey throughout the years of my life.
         </p>
@@ -87,10 +87,7 @@ console.log(pathname)
         <Carousel className="w-11/12 mx-auto  ">
           <CarouselContent className="">
             {Data.map((value, index) => (
-              <CarouselItem
-                key={index}
-                className=" md:basis-1/3 lg:basis-1/3"
-              >
+              <CarouselItem key={index} className=" md:basis-1/3 lg:basis-1/3">
                 <div className="">
                   <Card className="w-auto h-auto rounded-none">
                     <CardContent
@@ -103,7 +100,7 @@ console.log(pathname)
                         src={value.image}
                       />
                       <motion.div
-                        className="absolute flex justify-start items-start gap-4 flex-col bottom-4 pb-4 px-4 overflow-hidden"
+                        className="absolute flex justify-start items-start gap-4 flex-col bottom-4 pb-4 px-4 overflow-hidden w-full"
                         initial={{ opacity: 1, y: 0 }}
                         animate={{
                           opacity: hoveredIndex === index ? 1 : 0,
@@ -115,7 +112,7 @@ console.log(pathname)
                           {value.Year}
                         </h6>
                         <motion.p
-                          className="md:text-lg text-md font-semibold md:w-52 w-36 text-[--color-theme]"
+                          className="md:text-lg text-md font-semibold md:w-52 w-72 text-[--color-theme]"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{
                             opacity: hoveredIndex === index ? 1 : 0,
@@ -126,7 +123,7 @@ console.log(pathname)
                           {value.title}
                         </motion.p>
                         <motion.p
-                          className="text-white text-xs md:text-sm md:w-80 w-32"
+                          className="text-white text-xs md:text-sm md:w-80 w-72"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{
                             opacity: hoveredIndex === index ? 1 : 0,
@@ -145,7 +142,7 @@ console.log(pathname)
                           y: hoveredIndex === index ? 0 : 40,
                         }}
                         transition={{ duration: 0.3 }}
-                        className="absolute bottom-16 text-white text-2xl font-bold pl-4 md:w-52 w-36"
+                        className="absolute bottom-16 text-white text-2xl font-bold pl-4 md:w-52 w-52 "
                       >
                         {value.Year}
                       </motion.p>
@@ -156,8 +153,20 @@ console.log(pathname)
             ))}
           </CarouselContent>
           <div className="absolute md:static -bottom-12 left-40 ">
-            <CarouselPrevious className={pathname==='/know-me-professionally/my-journey'?"bg-[#FF7143] text-white":"bg-[#FF7143] text-white"} />
-            <CarouselNext className={pathname==='/know-me-professionally/my-journey'?"bg-[#FF7143] text-white":"bg-[#FF7143] text-white"} />
+            <CarouselPrevious
+              className={
+                pathname === "/know-me-professionally/my-journey"
+                  ? "bg-[#FF7143] text-white"
+                  : "bg-[#FF7143] text-white"
+              }
+            />
+            <CarouselNext
+              className={
+                pathname === "/know-me-professionally/my-journey"
+                  ? "bg-[#FF7143] text-white"
+                  : "bg-[#FF7143] text-white"
+              }
+            />
           </div>
         </Carousel>
       </div>

@@ -12,7 +12,7 @@ function MyStory() {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowMyStory((prev) => !prev);
-    }, 2500); 
+    }, 2000); 
 
     return () => clearInterval(interval);
   }, []);

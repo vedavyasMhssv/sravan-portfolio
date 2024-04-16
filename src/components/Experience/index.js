@@ -11,7 +11,7 @@ const Text = ({ text, classes }) => {
 };
 function Experience() {
   return (
-    <div className="flex w-full md:my-32 py-12 md:py-12 experience">
+    <div className="flex w-full md:my-32 py-28 md:py-12 experience">
       <div
       className="border-2 border-dashed h-[24rem] w-[24rem] md:h-[28rem] md:w-[28rem] border-[#ffffff30] rounded-[50%] flex justify-center items-center relative"
         style={{
@@ -116,14 +116,14 @@ function Experience() {
           text={"Product Design"}
           classes={"bottom-[100px] md:right-[-100px] right-[-50px] text-sm"}
         />
-        <Text text={"Growth Strategy"} classes={"bottom-[40px] right-[0px] text-sm"} />
+        <Text text={"Growth Strategy"} classes={"bottom-[20px] right-[0px] text-sm"} />
         <Text
           text={"Cross-Collaboration"}
           classes={"bottom-[20px] left-[-40px] text-sm"}
         />
         <Text
           text={"Innovation Drive"}
-          classes={"bottom-[-20px] left-[150px] text-sm"}
+          classes={"bottom-[-20px] md:left-[140px] text-sm"}
         />
       </div>
     </div>

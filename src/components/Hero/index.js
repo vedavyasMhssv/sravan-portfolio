@@ -22,7 +22,7 @@ function Hero() {
           <div className="md:text-4xl text-xl uppercase font-bold leading-tight tracking-tighter text-left  ">
           I'm  {text}
           </div>
-          <div className="text-[18px]  leading-7 tracking-tight text-left max-w-[330px] max-md:text-[`14px] max-md:mx-auto">
+          <div className="md:text-[18px]  leading-7 tracking-tight text-left max-w-[330px] max-md:mx-auto">
             {`Let's`} unite our efforts to achieve your goals and bring your
             dreams to life.
           </div>

@@ -7,6 +7,7 @@ import { MdArrowOutward } from "react-icons/md";
 import { MdArrowDownward } from "react-icons/md";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import Link from "next/link";
 
 const Accordiancustom = () => {
   const defaultContent =
@@ -90,7 +91,9 @@ const Accordiancustom = () => {
           <div className="flex justify-start items-start gap-4 flex-col py-4">
             <p className="text-sm font-medium ">{`QR Angadi is a flagship product of Angadi World Technologies Pvt Ltd, a company founded with a commitment to innovation and excellence. Our team of dedicated professionals is driven to simplify and enhance the QR code experience for users across various industries.`}</p>
             <Button className="w-60 rounded-bl-xl rounded-tr-xl rounded-tl-none rounded-br-none flex items-center gap-4 ring-1 ring-black ml-2 bg-white text-black hover:bg-black hover:text-white">
+              <Link href={'https://www.qrangadi.com'}>
               View Site
+              </Link>
               <IoIosArrowRoundForward />
             </Button>
           </div>

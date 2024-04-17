@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import arrow from "@/images/common/Arrow.png";
@@ -28,7 +28,7 @@ function SocialFeeds() {
   const [feed, setFeed] = useState();
   const [error, setError] = useState(null);
   const [mergedData, setMergedData] = useState([]);
-  const [numPosts, setNumPosts] = useState(10); 
+  const [numPosts, setNumPosts] = useState(5); 
 
   const fetchData = async () => {
     const instagramToken = `IGQWRNUlFYak5UZAkZAqRzRtSHZAUZATBBS01QbWUxczdhTjhHUkRFQWsyVFIySG5kOWZALdGhzemZA5SWZA3REtuaEgxRXdWQXBoUTlCV1R5bjgxaFZAMMThELUFBNXc4MnNvYU5zVWlYTUtlSVljcUgzZAmhzcFJZAWGZAqMEUZD`;
@@ -78,7 +78,7 @@ function SocialFeeds() {
 
 
   const handleRefresh = () => {
-    const newNumPosts = Math.min(mergedData.length, numPosts + 10); // Increase by 10 or less if fewer posts available
+    const newNumPosts = Math.min(mergedData.length, numPosts + 5); // Increase by 10 or less if fewer posts available
     setNumPosts(newNumPosts);
   };
 
@@ -136,7 +136,7 @@ function SocialFeeds() {
           );
         })}
       </div>
-      <div className="w-11/12 md:w-[95%] mx-auto mt-10 px-10 overflow-hidden ">
+      <div className="w-11/12 md:w-[95%] mx-auto mt-10 px-10 overflow-hidden mb-12">
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 500: 2, 800: 3 }}>
           <Masonry gutter="10px">
             {mergedData.slice(0, numPosts).map((value, index) => {
@@ -184,7 +184,9 @@ function SocialFeeds() {
           </Masonry>
         </ResponsiveMasonry>
       </div>
-    </div>
+      <iframe src='https://widgets.sociablekit.com/linkedin-page-posts/iframe/25399239' frameborder='0' width='100%' height='1000'></iframe>             
+     </div>
+
   );
 }
 

@@ -46,13 +46,16 @@ function SocialFeeds() {
       if (instagramResponse.status !== 200 || facebookResponse.status !== 200) {
         throw new Error("Failed to fetch data");
       }
-
       const merged = [
         ...instagramResponse.data.data,
         ...facebookResponse.data.data,
       ];
-      const shuffled = merged.sort(() => Math.random() - 0.5);
-      setMergedData(shuffled);
+      const latestinsta=[merged[0]]
+      const latestface=[merged[25]]
+      const indicesToRemove = [0, 25];
+      const filteredMerged = merged.filter((_, index) => !indicesToRemove.includes(index));
+      const filltershuffled = filteredMerged.sort(() => Math.random() - 0.5);
+      setMergedData([...latestinsta,...latestface,...filltershuffled]);
     } catch (error) {
       console.log(error);
       setError(error.message);

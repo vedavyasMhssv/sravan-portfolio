@@ -157,14 +157,14 @@ export function Crouselslider() {
               className={
                 pathname === "/know-me-professionally/my-journey"
                   ? "bg-[#FF7143] text-white"
-                  : "bg-[#FF7143] text-white"
+                  : "text-black"
               }
             />
             <CarouselNext
               className={
                 pathname === "/know-me-professionally/my-journey"
-                  ? "bg-[#FF7143] text-white"
-                  : "bg-[#FF7143] text-white"
+                  ? "bg-[#FF7143] text-white "
+                  : "text-black "
               }
             />
           </div>

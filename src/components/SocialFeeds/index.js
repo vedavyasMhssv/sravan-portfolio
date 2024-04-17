@@ -117,7 +117,7 @@ function SocialFeeds() {
           </motion.div>
         </div>
       </div>
-      <div className="flex md:gap-5 flex-wrap justify-between md:max-w-[60%] mx-auto px-5">
+      <div className="flex md:gap-5 flex-wrap justify-between md:max-w-[60%] mx-auto px-5 overflow-hidden">
         {media.map((item) => {
           return (
             <p
@@ -133,7 +133,7 @@ function SocialFeeds() {
           );
         })}
       </div>
-      <div className="w-11/12 md:w-[95%] mx-auto mt-10 px-10">
+      <div className="w-11/12 md:w-[95%] mx-auto mt-10 px-10 overflow-hidden ">
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 500: 2, 800: 3 }}>
           <Masonry gutter="10px">
             {mergedData.slice(0, numPosts).map((value, index) => {
@@ -161,8 +161,13 @@ function SocialFeeds() {
                   }}
                 >
                   {value?.permalink ? (
+                    <div className="overflow-hidden w-[22rem]">
                     <InstagramEmbed url={value?.permalink} width={350} />
+
+                    </div>
+
                   ) : (
+
                     <FacebookEmbed url={value?.permalink_url} width={350} />
                   )}
                 </div>

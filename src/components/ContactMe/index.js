@@ -46,7 +46,7 @@ function ContactMe() {
           secondary: "#FFFAEE",
         },
       });
-      setLoading(false)
+      setLoading(false);
       return;
     }
     const templateParams = {
@@ -73,7 +73,12 @@ function ContactMe() {
                 secondary: "#FFFAEE",
               },
             });
-            setLoading(false)
+            setLoading(false);
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+            setlastName("");
           }
         },
         (error) => {
@@ -92,16 +97,13 @@ function ContactMe() {
           });
           setLoading(true);
         }
-      
-        
       );
-      
 
-    setName("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
-    setlastName("");
+    // setName("");
+    // setEmail("");
+    // setSubject("");
+    // setMessage("");
+    // setlastName("");
   };
 
   return (
@@ -164,7 +166,7 @@ function ContactMe() {
           </div>
 
           <input
-          id="email"
+            id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -172,7 +174,7 @@ function ContactMe() {
             className="placeholder:text-black pb-4 placeholder:font-bold border-b border-b-[black] placeholder:text-[14px] flex-1 w-full  focus-visible:outline-none"
           />
           <input
-          id="subject"
+            id="subject"
             type="text"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
@@ -211,17 +213,20 @@ function ContactMe() {
           <div>
             <div className="flex gap-5 py-2 items-center">
               <MdEmail />
-              <p>sample@gmail.com</p>
+              <p>sravan@angadiworldtech.com</p>
             </div>
             <div className=" flex gap-5 py-2">
               <FaPhoneAlt />
-              <p>+91 6756276379</p>
+              <p>+91 9110314465</p>
             </div>
           </div>
           <hr className="mb-5"></hr>
           <div className=" flex gap-5">
             <FaLocationDot className="text-white mt-[5px]" />
-            <p>sample address 21A Hyderabad India</p>
+            <p>
+              # 93/1,5, First Floor MRS Complex, Ramamurthy Nagar Main Rd,
+              Ramamurthy Nagar, Bengaluru, Karnataka 560016
+            </p>
           </div>
           <div className="text-xl text-white cursor-pointer flex gap-2 relative max-w-fit ml-auto bottom-[-15px] right-[-20px]">
             <AiFillInstagram />

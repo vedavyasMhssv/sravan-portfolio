@@ -32,6 +32,7 @@ export default function Home() {
     // const button2 = document.querySelector("#Works");
     const button3 = document.querySelector("#Social");
     const button4 = document.querySelector("#letsTalkBtn");
+    const button5 = document.querySelector("#name");
 
     button.addEventListener("click", () => {
       gsap.to(window, {duration: 2, scrollTo:{y:"#section1", offsetY:70},ease:"back.out"});
@@ -47,6 +48,9 @@ export default function Home() {
     });
     button4.addEventListener("click", () => {
       gsap.to(window, {duration: 3, scrollTo:{y:"#section5", offsetY:70},ease:"back.out"});
+    });
+    button5.addEventListener("click", () => {
+      gsap.to(window, {duration: 3, scrollTo:{y:"#hero", offsetY:70},ease:"back.out"});
     });
    
   },
@@ -74,7 +78,10 @@ export default function Home() {
           }}
         >
           <Navigatebutton />
+          <div id="hero">
+
           <Hero />
+          </div>
           <Experience />
           <div id="section1">
 

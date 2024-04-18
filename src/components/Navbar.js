@@ -49,7 +49,7 @@ const Nav = () => {
             className="rounded-full h-20 w-20 object-contain absolute left-0 "
             src={Logo}
           />
-          <Image className="ml-10 md:h-12 h-16 w-auto object-contain "  src={name}/>
+          <Image id="name" className="ml-10 md:h-12 h-16 w-auto object-contain "  src={name}/>
           {/* <span className=" font-[Pacifico] md:text-[24px] text-lg font-normal leading-[40px] tracking-wide ml-10 capitalize">
             Sravan Kumar Angadi
           </span> */}

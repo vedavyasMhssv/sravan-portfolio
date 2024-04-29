@@ -139,7 +139,7 @@ function OurServices() {
           className="md:w-3/4 w-full"
         >
           <h6 className="font-bold uppercase text-white text-sm leading-7 py-4">
-            angadi world technology
+          Angadi World Technologies
           </h6>
           <CarouselContent>
             {data.map((value, index) => (

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import arrow from "@/images/common/Arrow.png";
@@ -21,6 +21,7 @@ import { YouTubeEmbed } from "react-social-media-embed";
 import axios from "axios";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { Divider } from "@nextui-org/react";
 
 function SocialFeeds() {
   const [selected, setSelected] = useState(1);
@@ -28,7 +29,8 @@ function SocialFeeds() {
   const [feed, setFeed] = useState();
   const [error, setError] = useState(null);
   const [mergedData, setMergedData] = useState([]);
-  const [numPosts, setNumPosts] = useState(5); 
+  const [numPosts, setNumPosts] = useState(5);
+  const [isClient, setIsClient] = useState(false);
 
   const fetchData = async () => {
     const instagramToken = `IGQWRNUlFYak5UZAkZAqRzRtSHZAUZATBBS01QbWUxczdhTjhHUkRFQWsyVFIySG5kOWZALdGhzemZA5SWZA3REtuaEgxRXdWQXBoUTlCV1R5bjgxaFZAMMThELUFBNXc4MnNvYU5zVWlYTUtlSVljcUgzZAmhzcFJZAWGZAqMEUZD`;
@@ -50,12 +52,14 @@ function SocialFeeds() {
         ...instagramResponse.data.data,
         ...facebookResponse.data.data,
       ];
-      const latestinsta=[merged[0]]
-      const latestface=[merged[25]]
+      const latestinsta = [merged[0]];
+      const latestface = [merged[25]];
       const indicesToRemove = [0, 25];
-      const filteredMerged = merged.filter((_, index) => !indicesToRemove.includes(index));
+      const filteredMerged = merged.filter(
+        (_, index) => !indicesToRemove.includes(index)
+      );
       const filltershuffled = filteredMerged.sort(() => Math.random() - 0.5);
-      setMergedData([...latestinsta,...latestface,...filltershuffled]);
+      setMergedData([...latestinsta, ...latestface, ...filltershuffled]);
     } catch (error) {
       console.log(error);
       setError(error.message);
@@ -66,21 +70,35 @@ function SocialFeeds() {
     fetchData();
   }, []);
 
-  
-  
-
-
   const media = [
     { name: "AWT", id: 1 },
     { name: "QR ANGADI", id: 2 },
   ];
 
-
-
   const handleRefresh = () => {
     const newNumPosts = Math.min(mergedData.length, numPosts + 5); // Increase by 10 or less if fewer posts available
     setNumPosts(newNumPosts);
   };
+
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      const script = document.createElement("script");
+      script.src = "https://widgets.sociablekit.com/linkedin-page-posts/widget.js";
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+
+      return () => {
+        // Cleanup function to remove the script when component unmounts
+        document.body.removeChild(script);
+      };
+    }
+  }, [isClient]);
 
   return (
     <div className="bg-white py-10">
@@ -94,10 +112,10 @@ function SocialFeeds() {
           }}
           viewport={{ once: false }}
           transition={{ duration: 2 }}
-          className=" text-4xl md:text-8xl font-bold text-black "
+          className=" text-4xl md:text-8xl font-bold text-black uppercase "
         >
-          <p className="text-[--color-theme]">SOCIAL</p>
-          MEDIA.
+          <p className="text-[--color-theme] uppercase">Community</p>
+          Connect.
         </motion.div>
         <div className="relative min-h-[60px] min-w-[60px] md:min-h-[140px] md:min-w-[140px] ms-5 flex items-end">
           <motion.div
@@ -142,51 +160,57 @@ function SocialFeeds() {
             {mergedData.slice(0, numPosts).map((value, index) => {
               return (
                 <>
-                <div
-                  key={index}
-                  className="px-2 py-4  self-center flex md:hidden   max-h-fit rounded-lg  flex-col overflow-hidden  text-black"
-                  style={{
-                    minHeight: "fit-content",
-                  }}
-                >
-                  {value?.permalink ? (
-                    <InstagramEmbed url={value?.permalink} width={350} />
-                  ) : (
-                    <FacebookEmbed url={value?.permalink_url} width={350} />
-                  )}
-                </div>
-                <div
-                  key={index}
-                  className="px-2 py-4 mx-auto hidden md:flex   w-auto border border-black max-h-fit rounded-lg  flex-col overflow-hidden  text-black"
-                  style={{
-                    minHeight: "fit-content",
-                    boxShadow: "5px 6px 0px 0px #000000B0",
-                  }}
-                >
-                  {value?.permalink ? (
-                    <div className="overflow-hidden w-[22rem]">
-                    <InstagramEmbed url={value?.permalink} width={350} />
-
-                    </div>
-
-                  ) : (
-
-                    <FacebookEmbed url={value?.permalink_url} width={350} />
-                  )}
-                </div>
-
+                  <div
+                    key={index}
+                    className="px-2 py-4  self-center flex md:hidden   max-h-fit rounded-lg  flex-col overflow-hidden  text-black"
+                    style={{
+                      minHeight: "fit-content",
+                    }}
+                  >
+                    {value?.permalink ? (
+                      <InstagramEmbed url={value?.permalink} width={350} />
+                    ) : (
+                      <FacebookEmbed url={value?.permalink_url} width={350} />
+                    )}
+                  </div>
+                  <div
+                    key={index}
+                    className="px-2 py-4 mx-auto hidden md:flex   w-auto border border-black max-h-fit rounded-lg  flex-col overflow-hidden  text-black"
+                    style={{
+                      minHeight: "fit-content",
+                      boxShadow: "5px 6px 0px 0px #000000B0",
+                    }}
+                  >
+                    {value?.permalink ? (
+                      <div className="overflow-hidden">
+                        <InstagramEmbed url={value?.permalink} width={"100%"} />
+                      </div>
+                    ) : (
+                      <FacebookEmbed url={value?.permalink_url} width={350} />
+                    )}
+                  </div>
                 </>
               );
             })}
-            <div onClick={handleRefresh} className="font-[Pacifico] text-[#b3b3b3;] text-6xl flex justify-center items-center hover:text-[black] p-3">
+            <div
+              onClick={handleRefresh}
+              className="font-[Pacifico] text-[#b3b3b3;] text-6xl flex justify-center items-center hover:text-[black] p-3"
+            >
               Refresh
             </div>
           </Masonry>
         </ResponsiveMasonry>
       </div>
-      <iframe src='https://widgets.sociablekit.com/linkedin-page-posts/iframe/25399239' frameborder='0' width='100%' height='1000'></iframe>             
-     </div>
+      {/* <iframe src='https://widgets.sociablekit.com/linkedin-page-posts/iframe/25399239' frameborder='0' width='100%' height='1000'></iframe>              */}
+     
 
+      <div className="w-11/12 mx-auto ">
+      <Divider orientation="horizontal" className="mt-4 mb-4"/>
+      <div   class="sk-ww-linkedin-page-post" data-embed-id="25399239"></div>
+      <Divider orientation="horizontal" className="mt-4"/>
+      </div>
+    
+    </div>
   );
 }
 

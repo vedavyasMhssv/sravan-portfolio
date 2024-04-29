@@ -55,45 +55,55 @@ const Nav = () => {
           </span> */}
         </NavbarBrand>
         <NavbarContent
-          className="hidden sm:flex gap-12 uppercase ml-12"
+          className="hidden sm:flex gap-4 uppercase ml-24"
           justify="end"
         >
           <NavbarItem>
             <Link
-              id="Mystory"
-              className="text-sm font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700 "
+              // id="Mystory"
+              className="text-xs font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700 "
               color="foreground"
               href="#"
             >
-              My story
+             Welcome 
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              id="Mystory"
+              className="text-xs font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700 "
+              color="foreground"
+              href="#"
+            >
+              My Journey
             </Link>
           </NavbarItem>
           <NavbarItem>
             <Link
               id="Service"
-              className="text-sm font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700"
+              className="text-xs font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700"
               href="#"
               aria-current="page"
             >
-              Service
+             Innovations 
             </Link>
           </NavbarItem>
-          {/* <NavbarItem>
-          <Link
-          id="Works"
-            className="text-sm font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700"
-            href="#"
-          >
-            Works
-          </Link>
-        </NavbarItem> */}
           <NavbarItem>
             <Link
               id="Social"
-              className="text-sm font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700"
+              className="text-xs font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700"
               href="#"
             >
-              Social
+             Community Connect
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              // id="Social"
+              className="text-xs font-bold leading-7 tracking-wider text-white hover:text-[#FF7143] transition-all duration-700"
+              href="#"
+            >
+            Blog
             </Link>
           </NavbarItem>
         </NavbarContent>
@@ -107,8 +117,8 @@ const Nav = () => {
               <div className={`${styles["m-scroll"]}`}>
                 <div className={`${styles["m-scroll__title"]}`}>
                   <div>
-                    <p>Let's Talk &nbsp;</p>
-                    <p>Let's Talk &nbsp;</p>
+                    <p>Conversations &nbsp;</p>
+                    <p>Conversations &nbsp;</p>
                   </div>
                 </div>
               </div>
@@ -135,7 +145,7 @@ const Nav = () => {
                       <div
                         className={pathname==='/'?active:unactive}
                       >
-                        <p className="text-center self-center">Home</p>
+                        <p className="text-center self-center"> Welcome </p>
                       </div>
 
                       </SheetClose>
@@ -146,7 +156,7 @@ const Nav = () => {
                         id="Mystory"
                         className={pathname==='/Mystory'?active:unactive}
                       >
-                        <p className="text-center self-center">My story</p>
+                        <p className="text-center self-center"> My Journey</p>
                       </div>
 
                       </SheetClose>
@@ -157,7 +167,7 @@ const Nav = () => {
                         id="Service"
                         className={pathname==='/Service'?active:unactive}
                       >
-                        <p className="text-center self-center">Service</p>
+                        <p className="text-center self-center"> Innovations </p>
                       </div>
 
                       </SheetClose>
@@ -168,7 +178,7 @@ const Nav = () => {
                         id="Social"
                         className={pathname==='/Social'?active:unactive}
                       >
-                        <p className="text-center self-center">Social</p>
+                        <p className="text-center self-center"> Community Connect</p>
                       </div>
 
                       </SheetClose>

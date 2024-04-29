@@ -75,10 +75,10 @@ function Footer() {
             <p className="text-[12px]">email</p>
             <p className="md:text-3xl lowercase">sravan@angadiworldtech.com </p>
           </div>
-          <div>
+          {/* <div>
             <p className="text-[12px]">phone</p>
             <p className="text-3xl">+91-9110314465</p>
-          </div>
+          </div> */}
           <div>
             <p className="text-[12px]">social</p>
             <p className="text-3xl flex gap-2 mt-2">

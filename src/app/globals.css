@@ -169,6 +169,8 @@ body {
   right: 10px;
 }
 
+
+
 @media screen and (max-width: 325px) {
   .experience {
     scale: 0.6;

@@ -4,13 +4,29 @@ import sravan from "@/images/hero/sravan.png";
 import orangeBlob from "@/images/common/orange-blob.png";
 import { FaPhoneAlt } from "react-icons/fa";
 import { useTypewriter } from 'react-simple-typewriter'
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 function Hero() {
   const [text] = useTypewriter({
     words: ['a Innovator', 'Technology Leader','AN ENTREPRENEUR.'],
     loop: false
   })
+
+  gsap.registerPlugin(useGSAP,ScrollToPlugin);
+
+  useGSAP(() => {
+    const button = document.querySelector("#letsTalk");
+  
+    button.addEventListener("click", () => {
+      gsap.to(window, {duration: 3, scrollTo:{y:"#section5", offsetY:70},ease:"back.out"});
+    });
+  
+  },
+ 
+); 
+
 
   return (
     <div className="pt-20 flex flex-wrap md:px-0 px-5 relative z-[1]" id="hero">
@@ -26,12 +42,15 @@ function Hero() {
             {`Let's`} unite our efforts to achieve your goals and bring your
             dreams to life.
           </div>
-          <button className="flex items-center gap-3 mt-5 bg-[#FF71431A] max-w-[330px] p-[6.5px] text-sm font-[600] rounded-[50px] uppercase max-md:mx-auto">
-            <span className="bg-[--color-theme] p-[12px] rounded-[50%]">
+          <div  id="letsTalk">
+          <button   className="flex items-center gap-3 mt-5 bg-[#FF71431A]  p-[6.5px] text-sm font-[600] rounded-[50px] uppercase max-md:mx-auto">
+            <span  className="bg-[--color-theme] p-[12px] rounded-[50%]">
               <FaPhoneAlt />
             </span>
-            <span>{`got a project? let’s talk!`}</span>
+            <span >{`got a project? let’s talk!`}</span>
           </button>
+
+          </div>
         </div>
         
       </div>
